@@ -1,0 +1,3709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brown Pizza Cafe — Delicious Pizza Always</title>
+<meta name="description" content="Brown Pizza Cafe, Palia Kalan Kheri — wood-fired pizza, Chinese, shakes, pasta, burgers and more. Order on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=Manrope:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+
+/* =========================================================
+   TOKENS
+========================================================= */
+:root{
+  --ink:#211610;
+  --ink-soft:#4a3a30;
+  --cream:#fbf3e6;
+  --cream-2:#f3e4cd;
+  --paper:#fffaf2;
+  --brick:#c1421f;
+  --brick-dark:#8f2f14;
+  --gold:#e5a038;
+  --gold-dark:#b97a1e;
+  --crust:#6b3a20;
+  --green:#3f6b4a;
+  --line: rgba(33,22,16,.13);
+  --shadow-1: 0 2px 10px rgba(90,50,20,.10);
+  --shadow-2: 0 18px 44px rgba(60,30,10,.20);
+  --radius-s: 10px;
+  --radius-m: 18px;
+  --radius-l: 28px;
+  --display: 'Fraunces', Georgia, serif;
+  --script: 'Caveat', cursive;
+  --sans: 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  --maxw: 1240px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html{scroll-behavior:smooth;}
+@media(prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important;}
+}
+body{
+  font-family:var(--sans);
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.5;
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%;}
+button, input{font-family:inherit; color:inherit;}
+button{cursor:pointer; border:0; background:none;}
+a{color:inherit; text-decoration:none;}
+:focus-visible{outline:3px solid var(--gold-dark); outline-offset:2px;}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 20px;}
+@media(min-width:880px){ .wrap{padding:0 40px;} }
+
+.eyebrow-script{
+  font-family:var(--script);
+  font-size:22px;
+  color:var(--brick);
+  font-weight:700;
+  display:inline-block;
+  transform:rotate(-2deg);
+}
+
+h1,h2,h3{font-family:var(--display); color:var(--ink); font-weight:700; letter-spacing:-.01em;}
+
+/* brush-stroke banner used for section / category titles, echoes the cafe's own printed menu boards */
+.brush-title{
+  position:relative;
+  display:inline-block;
+  padding:.36em .1em .3em 0;
+}
+.brush-title span{position:relative; z-index:2;}
+.brush-title::before{
+  content:"";
+  position:absolute;
+  left:-10px; right:-14px; bottom:2px; top:38%;
+  background:linear-gradient(100deg, var(--gold) 0%, var(--gold) 60%, var(--gold-dark) 100%);
+  clip-path:polygon(0% 20%,100% 0%,98% 85%,2% 100%);
+  z-index:1;
+  border-radius:3px;
+}
+.brush-title.on-dark::before{background:linear-gradient(100deg, var(--brick) 0%, var(--brick-dark) 100%);}
+
+/* =========================================================
+   NAV
+========================================================= */
+.site-nav{
+  position:sticky; top:0; z-index:1000;
+  background:rgba(251,243,230,.92);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.nav-row{
+  display:flex; align-items:center; justify-content:space-between;
+  height:70px;
+}
+.brand{display:flex; align-items:center; gap:11px;}
+.brand-badge{
+  width:46px; height:46px; border-radius:50%;
+  overflow:hidden; border:2px solid var(--paper); box-shadow:var(--shadow-1);
+  flex:none;
+}
+.brand-badge img{width:100%; height:100%; object-fit:cover;}
+.brand-name{font-family:var(--display); font-size:16px; font-weight:700; line-height:1.05; white-space:nowrap;}
+.brand-name small{display:block; font-family:var(--sans); font-size:8.5px; letter-spacing:1.5px; color:var(--brick); font-weight:700; margin-top:2px; white-space:nowrap;}
+@media(min-width:520px){ .brand-name{font-size:19px;} .brand-name small{font-size:9.5px; letter-spacing:2px;} }
+.nav-call span{display:none;}
+@media(min-width:460px){ .nav-call span{display:inline;} }
+.nav-call{padding:10px 13px;}
+@media(min-width:460px){ .nav-call{padding:10px 16px;} }
+
+.nav-links{display:none; gap:6px; align-items:center;}
+.nav-links a{
+  font-weight:600; font-size:14.5px; padding:9px 16px; border-radius:100px;
+  color:var(--ink-soft); transition:background .2s, color .2s;
+  position:relative;
+}
+.nav-links a:hover{background:var(--cream-2); color:var(--ink);}
+@media(min-width:760px){ .nav-links{display:flex;} }
+
+.nav-call{
+  display:flex; align-items:center; gap:8px;
+  background:var(--brick); color:#fff; font-weight:700; font-size:13.5px;
+  padding:10px 16px; border-radius:100px; box-shadow:var(--shadow-1);
+  transition:transform .18s, box-shadow .18s;
+  white-space:nowrap;
+}
+.nav-call:hover{transform:translateY(-2px); box-shadow:var(--shadow-2);}
+.nav-call svg{width:16px; height:16px;}
+
+.nav-burger{display:flex; width:42px; height:42px; align-items:center; justify-content:center; border-radius:50%; background:var(--cream-2);}
+.nav-burger span{display:block; width:18px; height:2px; background:var(--ink); position:relative;}
+.nav-burger span::before, .nav-burger span::after{content:""; position:absolute; left:0; width:18px; height:2px; background:var(--ink);}
+.nav-burger span::before{top:-6px;} .nav-burger span::after{top:6px;}
+@media(min-width:760px){ .nav-burger{display:none;} }
+
+.mobile-menu{
+  max-height:0; overflow:hidden; transition:max-height .32s ease;
+  border-top:1px solid var(--line);
+  background:var(--paper);
+}
+.mobile-menu.open{max-height:260px;}
+.mobile-menu .wrap{display:flex; flex-direction:column; padding:10px 20px 18px;}
+.mobile-menu a{padding:13px 4px; font-weight:700; font-size:16px; border-bottom:1px solid var(--line); display:flex; justify-content:space-between; align-items:center;}
+
+/* =========================================================
+   HERO
+========================================================= */
+.hero{
+  padding:44px 0 30px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";
+  position:absolute; inset:0;
+  background:
+    radial-gradient(ellipse 700px 500px at 85% 8%, rgba(229,160,56,.22), transparent 60%),
+    radial-gradient(ellipse 600px 500px at 0% 90%, rgba(193,66,31,.12), transparent 60%);
+  z-index:0;
+}
+.hero-grid{
+  position:relative; z-index:1;
+  display:grid; grid-template-columns:1fr; gap:30px; align-items:center;
+}
+.hero-copy .eyebrow-script{margin-bottom:6px;}
+.hero-copy h1{
+  font-size:clamp(34px,7vw,64px);
+  line-height:1.02;
+  font-weight:600;
+}
+.hero-copy h1 em{font-style:italic; color:var(--brick); font-weight:600;}
+.hero-copy p{
+  margin-top:18px; font-size:16px; color:var(--ink-soft); max-width:46ch; line-height:1.65;
+}
+.hero-cta{display:flex; flex-wrap:wrap; gap:12px; margin-top:26px;}
+.btn{
+  display:inline-flex; align-items:center; gap:9px;
+  padding:15px 26px; border-radius:100px; font-weight:700; font-size:15px;
+  transition:transform .2s, box-shadow .2s;
+}
+.btn-primary{background:var(--brick); color:#fff; box-shadow:0 10px 26px rgba(193,66,31,.34);}
+.btn-primary:hover{transform:translateY(-3px); box-shadow:0 16px 30px rgba(193,66,31,.4);}
+.btn-ghost{border:2px solid var(--ink); color:var(--ink);}
+.btn-ghost:hover{background:var(--ink); color:var(--cream);}
+.hero-stats{display:flex; gap:26px; margin-top:34px; flex-wrap:wrap;}
+.hero-stats div b{display:block; font-family:var(--display); font-size:26px;}
+.hero-stats div span{font-size:12px; color:var(--ink-soft); font-weight:600;}
+
+.hero-art{position:relative; z-index:1;}
+.hero-art-frame{
+  position:relative;
+  border-radius:32px;
+  overflow:hidden;
+  box-shadow:var(--shadow-2);
+  aspect-ratio:5/4;
+  transform:rotate(1.4deg);
+}
+.hero-art-frame img{width:100%; height:100%; object-fit:cover;}
+.hero-tag{
+  position:absolute; left:-14px; bottom:24px;
+  background:var(--paper); border-radius:18px; padding:14px 18px;
+  box-shadow:var(--shadow-2); display:flex; align-items:center; gap:10px;
+  transform:rotate(-3deg);
+  max-width:220px;
+}
+.hero-tag .dot{width:38px; height:38px; border-radius:50%; background:var(--green); flex:none; display:flex; align-items:center; justify-content:center; color:#fff; font-size:18px;}
+.hero-tag b{display:block; font-size:13px;} .hero-tag span{font-size:11px; color:var(--ink-soft);}
+
+@media(min-width:880px){
+  .hero{padding:70px 0 60px;}
+  .hero-grid{grid-template-columns:1.05fr .95fr; gap:50px;}
+}
+
+/* strip: quick info bar */
+.info-strip{
+  background:var(--ink); color:var(--cream);
+}
+.info-strip .wrap{
+  display:grid; grid-template-columns:repeat(2,1fr); gap:18px;
+  padding:26px 20px;
+}
+.info-strip div{display:flex; gap:12px; align-items:flex-start;}
+.info-strip svg{flex:none; width:20px; height:20px; margin-top:2px; color:var(--gold);}
+.info-strip b{display:block; font-size:13.5px;}
+.info-strip span{font-size:12px; color:rgba(251,243,230,.65);}
+@media(min-width:760px){ .info-strip .wrap{grid-template-columns:repeat(4,1fr);} }
+
+/* =========================================================
+   MENU SECTION
+========================================================= */
+.menu-section{padding:64px 0 30px;}
+.menu-head{max-width:640px; margin-bottom:8px;}
+.menu-head .eyebrow-script{display:block; margin-bottom:4px;}
+.menu-head h2{font-size:clamp(30px,5vw,44px); font-weight:600;}
+.menu-head p{color:var(--ink-soft); margin-top:10px; font-size:15px;}
+
+.cat-rail-wrap{position:relative; margin:30px 0 10px;}
+.cat-rail{
+  display:flex; gap:20px; overflow-x:auto; scroll-snap-type:x proximity;
+  padding:10px 4px 18px;
+  scrollbar-width:none;
+}
+.cat-rail::-webkit-scrollbar{display:none;}
+.cat-pill{
+  flex:none; width:88px; text-align:center; scroll-snap-align:start;
+  transition:transform .18s;
+}
+.cat-pill:hover{transform:translateY(-3px);}
+.cat-pill .ring{
+  width:76px; height:76px; border-radius:50%; margin:0 auto;
+  overflow:hidden; border:3px solid var(--paper); box-shadow:var(--shadow-1);
+  transition:border-color .2s, box-shadow .2s;
+}
+.cat-pill.active .ring{border-color:var(--brick); box-shadow:0 0 0 3px rgba(193,66,31,.25), var(--shadow-1);}
+.cat-pill .ring img{width:100%; height:100%; object-fit:cover;}
+.cat-pill p{margin-top:8px; font-size:11.5px; font-weight:700; line-height:1.25;}
+
+.cat-block{
+  padding:44px 0 8px;
+  border-top:1px dashed var(--line);
+  scroll-margin-top:150px;
+}
+.cat-block:first-child{border-top:0;}
+.cat-block-head{
+  display:flex; align-items:center; gap:18px; margin-bottom:22px; flex-wrap:wrap;
+}
+.cat-block-head h3{font-size:clamp(22px,3.4vw,30px); font-weight:600;}
+.cat-block-head img{
+  width:58px; height:58px; border-radius:16px; object-fit:cover; box-shadow:var(--shadow-1); flex:none;
+}
+.cat-count{font-size:12px; color:var(--ink-soft); font-weight:700; background:var(--cream-2); padding:5px 12px; border-radius:100px;}
+
+.dish-list{display:flex; flex-direction:column; gap:2px;}
+.dish{
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+  padding:18px 6px; border-bottom:1px solid var(--line);
+  flex-wrap:wrap;
+}
+.dish-info{min-width:180px; flex:1 1 220px;}
+.dish-name{font-weight:700; font-size:15.5px; display:flex; align-items:center; gap:8px;}
+.veg-mark{width:13px; height:13px; border:1.6px solid var(--green); border-radius:3px; display:inline-flex; align-items:center; justify-content:center; flex:none;}
+.veg-mark::after{content:""; width:6px; height:6px; border-radius:50%; background:var(--green);}
+.dish-desc{font-size:12.5px; color:var(--ink-soft); margin-top:3px; line-height:1.4;}
+
+.dish-controls{display:flex; align-items:center; gap:12px; flex-wrap:wrap; justify-content:flex-end;}
+.size-chips{display:flex; gap:6px;}
+.size-chip{
+  padding:7px 10px; border-radius:9px; border:1.5px solid var(--line); font-size:11.5px; font-weight:700;
+  background:var(--paper); transition:.16s;
+}
+.size-chip.sel{border-color:var(--brick); background:var(--brick); color:#fff;}
+.price-tag{font-family:var(--display); font-weight:700; font-size:17px; min-width:58px; text-align:right;}
+.price-tag small{font-family:var(--sans); font-size:11px; font-weight:700; color:var(--ink-soft);}
+
+
+
+@media(min-width:880px){
+  .cat-pill{width:104px;}
+  .cat-pill .ring{width:92px; height:92px;}
+  .dish-controls{gap:16px;}
+}
+
+/* =========================================================
+   GALLERY — 3D COVERFLOW
+========================================================= */
+.gallery-section{
+  padding:70px 0; background:var(--ink); color:var(--cream); overflow:hidden;
+}
+.gallery-head{display:flex; align-items:flex-end; justify-content:space-between; gap:20px; flex-wrap:wrap; margin-bottom:10px;}
+.gallery-head h2{color:var(--cream); font-size:clamp(28px,4.6vw,42px); font-weight:600;}
+.gallery-head p{color:rgba(251,243,230,.62); max-width:40ch; margin-top:8px; font-size:14.5px;}
+
+.coverflow{
+  position:relative;
+  height:340px;
+  margin-top:36px;
+  perspective:1400px;
+}
+.coverflow-track{
+  position:absolute; inset:0;
+  display:flex; align-items:center; justify-content:center;
+  transform-style:preserve-3d;
+}
+.cf-slide{
+  position:absolute;
+  width:270px; height:300px;
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:0 30px 60px rgba(0,0,0,.45);
+  transition:transform .8s cubic-bezier(.22,.68,0,1), opacity .8s ease, filter .8s ease;
+  will-change:transform;
+}
+.cf-slide img{width:100%; height:100%; object-fit:cover;}
+.cf-caption{
+  position:absolute; left:0; right:0; bottom:0; padding:16px 18px 14px;
+  background:linear-gradient(0deg, rgba(0,0,0,.7), transparent);
+  color:#fff; font-weight:700; font-size:13.5px;
+}
+
+.cf-arrows{display:flex; justify-content:center; gap:14px; margin-top:34px;}
+.cf-arrow{
+  width:48px; height:48px; border-radius:50%; border:1.6px solid rgba(251,243,230,.3);
+  display:flex; align-items:center; justify-content:center; color:var(--cream);
+  transition:.2s;
+}
+.cf-arrow:hover{background:var(--gold); border-color:var(--gold); color:var(--ink); transform:scale(1.06);}
+.cf-arrow svg{width:18px; height:18px;}
+
+@media(min-width:760px){
+  .coverflow{height:400px;}
+  .cf-slide{width:340px; height:360px;}
+}
+
+/* =========================================================
+   REVIEWS
+========================================================= */
+.reviews-section{padding:70px 0;}
+.reviews-head{max-width:600px; margin-bottom:30px;}
+.reviews-head h2{font-size:clamp(28px,4.6vw,42px); font-weight:600;}
+.reviews-track-wrap{overflow-x:auto; scrollbar-width:none; margin:0 -20px; padding:6px 20px 18px;}
+.reviews-track-wrap::-webkit-scrollbar{display:none;}
+.reviews-track{display:flex; gap:18px; width:max-content;}
+.review-card{
+  width:280px; background:var(--paper); border-radius:22px; padding:24px;
+  box-shadow:var(--shadow-1); border:1px solid var(--line);
+}
+.review-stars{color:var(--gold-dark); font-size:14px; letter-spacing:2px; margin-bottom:12px;}
+.review-quote{font-size:14.5px; line-height:1.6; color:var(--ink-soft); min-height:100px;}
+.review-who{display:flex; align-items:center; gap:10px; margin-top:18px;}
+.review-avatar{
+  width:38px; height:38px; border-radius:50%; background:var(--brick); color:#fff;
+  display:flex; align-items:center; justify-content:center; font-weight:800; font-size:14px; flex:none;
+}
+.review-who b{font-size:13.5px; display:block;}
+.review-who span{font-size:11.5px; color:var(--ink-soft);}
+@media(min-width:880px){ .review-card{width:320px;} }
+
+/* =========================================================
+   ABOUT / CAFE DETAILS
+========================================================= */
+.about-section{padding:70px 0; background:var(--cream-2);}
+.about-grid{display:grid; grid-template-columns:1fr; gap:40px;}
+.about-copy h2{font-size:clamp(28px,4.6vw,42px); font-weight:600;}
+.about-copy p{color:var(--ink-soft); margin-top:16px; font-size:15px; line-height:1.7; max-width:52ch;}
+.about-facts{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:28px;}
+.fact-card{
+  background:var(--paper); border-radius:18px; padding:18px; border:1px solid var(--line);
+}
+.fact-card svg{width:22px; height:22px; color:var(--brick); margin-bottom:10px;}
+.fact-card b{display:block; font-size:14px;}
+.fact-card span{font-size:12px; color:var(--ink-soft);}
+
+.hours-card{
+  background:var(--ink); color:var(--cream); border-radius:24px; padding:32px;
+}
+.hours-card h3{color:var(--cream); font-size:22px; font-weight:600; margin-bottom:6px;}
+.hours-card .eyebrow-script{color:var(--gold); margin-bottom:6px; display:block;}
+.hours-row{display:flex; justify-content:space-between; padding:11px 0; border-bottom:1px solid rgba(251,243,230,.14); font-size:14px;}
+.hours-row span:last-child{color:var(--gold); font-weight:700;}
+.hours-note{font-size:12.5px; color:rgba(251,243,230,.6); margin-top:16px; line-height:1.6;}
+
+@media(min-width:920px){ .about-grid{grid-template-columns:1.1fr .9fr;} }
+
+/* =========================================================
+   CONTACT
+========================================================= */
+.contact-section{padding:70px 0;}
+.contact-grid{display:grid; grid-template-columns:1fr; gap:30px;}
+.contact-copy h2{font-size:clamp(28px,4.6vw,42px); font-weight:600;}
+.contact-copy p{color:var(--ink-soft); margin-top:14px; font-size:15px; max-width:48ch;}
+.contact-cards{display:flex; flex-direction:column; gap:14px; margin-top:26px;}
+.contact-card{
+  display:flex; align-items:center; gap:14px; background:var(--paper); border:1px solid var(--line);
+  border-radius:18px; padding:16px 18px; transition:transform .18s, box-shadow .18s;
+}
+.contact-card:hover{transform:translateY(-3px); box-shadow:var(--shadow-1);}
+.contact-card .ic{width:44px; height:44px; border-radius:50%; background:var(--cream-2); display:flex; align-items:center; justify-content:center; flex:none; color:var(--brick);}
+.contact-card b{display:block; font-size:14.5px;} .contact-card span{font-size:12.5px; color:var(--ink-soft);}
+.map-frame{border-radius:22px; overflow:hidden; box-shadow:var(--shadow-1); border:1px solid var(--line); aspect-ratio:4/3;}
+.map-frame iframe{width:100%; height:100%; border:0;}
+@media(min-width:920px){ .contact-grid{grid-template-columns:1fr 1fr;} }
+
+/* =========================================================
+   FOOTER
+========================================================= */
+.site-footer{background:var(--ink); color:rgba(251,243,230,.7); padding:44px 0 26px;}
+.footer-top{display:flex; flex-wrap:wrap; justify-content:space-between; gap:26px; padding-bottom:26px; border-bottom:1px solid rgba(251,243,230,.14);}
+.footer-brand{display:flex; align-items:center; gap:12px;}
+.footer-brand img{width:44px; height:44px; border-radius:50%;}
+.footer-brand b{color:var(--cream); font-family:var(--display); font-size:18px;}
+.footer-links{display:flex; gap:34px; flex-wrap:wrap;}
+.footer-links div b{color:var(--cream); display:block; margin-bottom:10px; font-size:13px;}
+.footer-links a{display:block; font-size:13px; padding:5px 0; color:rgba(251,243,230,.65);}
+.footer-links a:hover{color:var(--gold);}
+.footer-bottom{display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; padding-top:20px; font-size:12px;}
+
+.toast{
+  position:fixed; left:50%; bottom:100px; transform:translate(-50%,20px);
+  background:var(--ink); color:var(--cream); padding:12px 22px; border-radius:100px;
+  font-size:13.5px; font-weight:700; z-index:1900; opacity:0; transition:.3s; pointer-events:none;
+}
+.toast.show{opacity:1; transform:translate(-50%,0);}
+
+.scroll-fade{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease;}
+.scroll-fade.in{opacity:1; transform:translateY(0);}
+
+
+/* =========================================================
+   MOBILE MENU DESIGN — imported from index_menu_mobile.html
+   Only the menu UI is changed; the rest of index.html stays intact.
+========================================================= */
+.mobile-menu-section{padding:30px 0 54px;}
+.mobile-menu-section .mobile-wrap{width:min(1180px,calc(100% - 28px));margin:auto;padding:0;}
+.mobile-section-head{margin-bottom:20px;}
+.mobile-section-head .mobile-eyebrow{font-family:var(--script);color:var(--brick);font-size:20px;font-weight:700;}
+.mobile-section-head h2{font-family:var(--display);font-size:30px;margin-top:2px;}
+.mobile-section-head p{font-size:11px;color:var(--ink-soft);margin-top:6px;}
+.mobile-category-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;}
+.mobile-category-card{min-width:0;min-height:122px;text-align:left;padding:15px;border-radius:18px;background:var(--paper);border:1px solid var(--line);box-shadow:0 4px 14px rgba(60,30,10,.06);position:relative;overflow:hidden;transition:transform .22s cubic-bezier(.22,.9,.28,1),box-shadow .22s ease,border-color .22s ease;}
+.mobile-category-card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(60,30,10,.12);border-color:rgba(193,66,31,.22);}
+.mobile-category-card:active{transform:translateY(-1px) scale(.98);}
+.mobile-category-card:before{content:"";position:absolute;width:80px;height:80px;border-radius:50%;right:-28px;bottom:-34px;background:var(--cream-2);}
+.mobile-category-card:hover,.mobile-category-card:active{transform:translateY(-3px);box-shadow:var(--shadow-2);border-color:rgba(184,61,29,.28);}
+.mobile-category-card h3{font-family:var(--display);font-size:17px;line-height:1.08;max-width:11ch;position:relative;z-index:1;}
+.mobile-item-count{display:block;margin-top:7px;font-size:9px;color:var(--ink-soft);font-weight:800;position:relative;z-index:1;}
+.mobile-menu-view .mobile-category-card{
+    width: calc(100% - 24px);
+    max-width: 300px;
+    justify-self: center;
+}
+
+.mobile-category-arrow{position:absolute;right:9px;top:9px;width:25px;height:25px;border-radius:50%;display:grid;place-items:center;background:var(--cream-2);font-size:13px;z-index:2;}
+.mobile-menu-view{position:fixed;inset:0;background:var(--cream);z-index:1200;overflow:auto;transform:translateX(100%);transition:transform .32s cubic-bezier(.2,.9,.25,1);}
+.mobile-menu-view.open{transform:translateX(0);}
+.mobile-menu-view-head{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:20;
+    min-height:66px;
+    background:rgba(251,243,230,.97);
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+    border-bottom:1px solid var(--line);
+}
+.mobile-menu-view-bar{min-height:66px;display:flex;align-items:center;gap:10px;}
+.mobile-back-btn{width:40px;height:40px;border-radius:50%;background:var(--paper);border:1px solid var(--line);font-size:21px;display:grid;place-items:center;flex:none;}
+.mobile-menu-view-title h2{font-family:var(--display);font-size:23px;line-height:1.05;}
+.mobile-menu-view-title span{font-size:9px;color:var(--ink-soft);font-weight:800;}
+.mobile-view-body{
+    padding:84px 0 42px;
+}
+.mobile-product-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+    width:100%;
+    box-sizing:border-box;
+}
+
+.mobile-product-card{
+    width:100%;
+    max-width:none;
+    min-width:0;
+    justify-self:stretch;
+    box-sizing:border-box;
+
+    /* ORIGINAL DESIGN */
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(60,30,10,.06);
+
+    transition:
+        transform .4s cubic-bezier(.22,.9,.28,1),
+        box-shadow .4s ease;
+
+}
+.mobile-product-card{background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 4px 14px rgba(60,30,10,.06);}
+
+
+.mobile-product-image{
+    aspect-ratio:1.1/1;
+    background:linear-gradient(135deg,var(--cream-2),#ead1ad);
+    position:relative;
+    overflow:hidden;
+}
+
+.mobile-product-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+.mobile-image-placeholder{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:12px;color:rgba(33,22,16,.38);font-family:var(--display);font-size:13px;font-weight:700;}
+.mobile-product-content{
+    padding:10px;
+    background:var(--paper);
+}
+
+.mobile-product-name{
+    font-family:var(--display);
+    font-size:15px;
+    line-height:1.08;
+}
+
+.mobile-price{
+    font-family:var(--display);
+    font-size:15px;
+    font-weight:700;
+    color:var(--brick);
+    margin-top:5px;
+}
+.mobile-details{font-size:9.5px;line-height:1.35;color:var(--ink-soft);margin-top:5px;}
+.mobile-size-row{display:flex;gap:4px;flex-wrap:wrap;margin-top:8px;}
+.mobile-size-btn{padding:5px 6px;border:1px solid var(--line);border-radius:8px;background:var(--cream);font-size:8px;font-weight:800;line-height:1.15;}
+.mobile-size-btn.active{background:var(--cream-2);}
+@media(min-width:760px){
+  .mobile-menu-section{padding-top:54px;}
+  .mobile-category-grid{gap:16px;}
+  .mobile-category-card{min-height:155px;padding:20px;border-radius:22px;}
+  .mobile-category-card h3{font-size:22px;}
+  .mobile-product-grid{gap:18px;}
+  .mobile-product-card{border-radius:22px;}
+  .mobile-product-content{padding:16px;}
+  .mobile-product-name{font-size:20px;}
+  .mobile-price{font-size:17px;}
+  .mobile-details{font-size:11px;}
+  .mobile-size-btn{font-size:10px;padding:7px 8px;}
+}
+@media(max-width:430px){
+  .mobile-product-grid{
+     gap:6px;
+    }
+  .mobile-menu-section{padding-top:28px;}
+  .mobile-category-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;}
+  .mobile-category-card{min-height:105px;padding:10px;border-radius:14px;}
+  .mobile-category-card h3{font-size:13px;}
+  .mobile-item-count{font-size:7.5px;margin-top:5px;}
+  .mobile-category-arrow{width:20px;height:20px;font-size:10px;right:6px;top:6px;}
+  .mobile-section-head h2{font-size:26px;}
+  .mobile-product-grid{gap:8px;}
+  .mobile-product-card{border-radius:14px;}
+  .mobile-product-content{padding:8px;}
+  .mobile-product-name{font-size:13px;}
+  .mobile-price{font-size:13px;}
+  .mobile-details{font-size:8px;}
+  .mobile-size-row{margin-top:6px;}
+  .mobile-size-btn{font-size:7px;padding:4px 5px;}
+}
+
+/* =========================================================================================
+   PREMIUM ENHANCEMENT LAYER
+   ---------------------------------------------------------------------------------------
+   Everything below is ADDITIVE ONLY. No selector above is deleted, no ID is renamed, no
+   section is reordered, no JS function is removed and no button is taken away — the page's
+   layout, structure and behaviour are exactly as before. This layer exists purely to add
+   motion, depth, tactile detail and a more expensive finish to the existing design:
+   micro-interactions on things people already tap, staggered reveals for grids that were
+   already there, refined shadows/gradients on cards that already existed, and a couple of
+   small "alive" touches (shine sweep, float, glow) that a premium food brand site would use.
+   Respects prefers-reduced-motion via the rule already defined near the top of this file.
+========================================================================================= */
+
+/* ---------- global feel ---------- */
+::selection{ background:var(--gold); color:var(--ink); }
+::-moz-selection{ background:var(--gold); color:var(--ink); }
+html{ scrollbar-width:thin; scrollbar-color: var(--brick) var(--cream-2); }
+::-webkit-scrollbar{ width:10px; height:10px; }
+::-webkit-scrollbar-track{ background:var(--cream-2); }
+::-webkit-scrollbar-thumb{ background:linear-gradient(180deg,var(--brick),var(--brick-dark)); border-radius:10px; border:2px solid var(--cream-2); }
+::-webkit-scrollbar-thumb:hover{ background:var(--brick-dark); }
+
+/* faint printed-paper grain across the whole page — barely-there, adds tactility */
+body{ position:relative; }
+body::after{
+  content:"";
+  position:fixed; inset:0; z-index:2147483000; pointer-events:none;
+  opacity:.028; mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+/* ---------- keyframe library ---------- */
+@keyframes prm-rise{ from{ opacity:0; transform:translateY(24px) scale(.985); } to{ opacity:1; transform:translateY(0) scale(1); } }
+@keyframes prm-rise-left{ from{ opacity:0; transform:translateX(-26px); } to{ opacity:1; transform:translateX(0); } }
+@keyframes prm-rise-right{ from{ opacity:0; transform:translateX(26px); } to{ opacity:1; transform:translateX(0); } }
+@keyframes prm-pop{ 0%{ opacity:0; transform:scale(.82); } 55%{ opacity:1; transform:scale(1.05); } 100%{ transform:scale(1); } }
+@keyframes prm-float{ 0%,100%{ transform:translateY(0) rotate(var(--prm-rot,0deg)); } 50%{ transform:translateY(-7px) rotate(var(--prm-rot,0deg)); } }
+@keyframes prm-float-soft{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-4px); } }
+@keyframes prm-shine{ 0%{ transform:translateX(-130%) skewX(-14deg); } 100%{ transform:translateX(230%) skewX(-14deg); } }
+@keyframes prm-shimmer{ 0%{ background-position:-340px 0; } 100%{ background-position:340px 0; } }
+@keyframes prm-glow-pulse{ 0%,100%{ box-shadow:0 0 0 0 rgba(193,66,31,.28); } 50%{ box-shadow:0 0 0 9px rgba(193,66,31,0); } }
+@keyframes prm-gold-pulse{ 0%,100%{ box-shadow:0 0 0 0 rgba(229,160,56,.35); } 50%{ box-shadow:0 0 0 8px rgba(229,160,56,0); } }
+@keyframes prm-underline-in{ from{ transform:scaleX(0); } to{ transform:scaleX(1); } }
+@keyframes prm-spin-slow{ from{ transform:rotate(0deg); } to{ transform:rotate(360deg); } }
+@keyframes prm-check-draw{ from{ stroke-dashoffset:22; } to{ stroke-dashoffset:0; } }
+@keyframes prm-badge-pop{ 0%{ transform:scale(1); } 35%{ transform:scale(1.35); } 60%{ transform:scale(.92); } 100%{ transform:scale(1); } }
+@keyframes prm-ring-fade{ 0%{ box-shadow:0 0 0 0 rgba(193,66,31,.45); } 100%{ box-shadow:0 0 0 14px rgba(193,66,31,0); } }
+@keyframes prm-caret{ 0%,100%{ opacity:.35; } 50%{ opacity:1; } }
+@keyframes prm-grad-drift{ 0%{ background-position:0% 50%; } 50%{ background-position:100% 50%; } 100%{ background-position:0% 50%; } }
+
+/* ---------- staggered reveal utility (driven by a tiny JS observer, see script) ----------
+   Grids already on the page (category cards, product cards, reviews, gallery caption, facts)
+   get a --prm-i custom property per child when they scroll into view; this animates them in
+   one after another instead of all at once. If JS hasn't run yet, content is fully visible
+   so nothing is ever hidden from a user or a crawler. */
+.prm-stagger.prm-armed > *{
+  opacity:0;
+  animation:prm-rise .62s cubic-bezier(.22,.9,.28,1) both;
+  animation-delay: calc(var(--prm-i,0) * 55ms);
+}
+
+/* ---------- nav ---------- */
+.site-nav{ transition:box-shadow .35s ease, background-color .35s ease; }
+.site-nav.prm-scrolled{ box-shadow:0 8px 28px rgba(60,30,10,.10); }
+.brand-badge{ transition:transform .4s cubic-bezier(.22,.9,.28,1), box-shadow .4s; }
+.brand:hover .brand-badge{ transform:rotate(-8deg) scale(1.06); box-shadow:0 8px 18px rgba(60,30,10,.28); }
+.nav-links a{ overflow:hidden; }
+.nav-links a::after{
+  content:""; position:absolute; left:16px; right:16px; bottom:6px; height:2px;
+  background:var(--brick); border-radius:2px; transform:scaleX(0); transform-origin:left;
+  transition:transform .3s cubic-bezier(.22,.9,.28,1);
+}
+.nav-links a:hover::after{ transform:scaleX(1); }
+.nav-burger span, .nav-burger span::before, .nav-burger span::after{ transition:transform .3s ease, opacity .3s ease; }
+.nav-burger.prm-open span{ background:transparent; }
+.nav-burger.prm-open span::before{ transform:translateY(6px) rotate(45deg); }
+.nav-burger.prm-open span::after{ transform:translateY(-6px) rotate(-45deg); }
+.mobile-menu a{ transition:padding-left .25s ease, color .25s ease; }
+.mobile-menu a:hover{ padding-left:10px; color:var(--brick); }
+
+/* ---------- buttons: soft sheen sweep + lift, layered on top of existing hover rules ---------- */
+.btn, .nav-call, .mobile-back-btn, .cf-arrow{
+  position:relative; overflow:hidden; isolation:isolate;
+}
+.btn::before, .nav-call::before{
+  content:""; position:absolute; inset:0; width:46%;
+  background:linear-gradient(100deg, transparent, rgba(255,255,255,.42), transparent);
+  transform:translateX(-140%) skewX(-14deg); pointer-events:none; z-index:1;
+}
+.btn:hover::before, .nav-call:hover::before{
+  animation:prm-shine .85s ease;
+}
+.btn-primary:active{ transform:scale(.97); }
+.btn-ghost:hover{ box-shadow:0 10px 22px rgba(33,22,16,.16); }
+
+/* subtle "ready to tap" breathing glow on the primary CTA once it's on screen */
+.hero-cta .btn-primary{ animation:prm-glow-pulse 2.8s ease-in-out 1.2s infinite; }
+.hero-cta .btn-primary:hover{ animation:none; }
+
+/* ---------- hero ---------- */
+.hero-copy h1{ background-size:200% auto; }
+.hero-copy .eyebrow-script{ animation:prm-rise-left .7s cubic-bezier(.22,.9,.28,1) both; }
+.hero-copy h1{ animation:prm-rise .8s .08s cubic-bezier(.22,.9,.28,1) both; }
+.hero-copy p{ animation:prm-rise .8s .18s cubic-bezier(.22,.9,.28,1) both; }
+.hero-cta{ animation:prm-rise .8s .28s cubic-bezier(.22,.9,.28,1) both; }
+.hero-stats{ animation:prm-rise .8s .36s cubic-bezier(.22,.9,.28,1) both; }
+.hero-stats div b{ display:inline-block; }
+.hero-art{ animation:prm-rise-right .9s .1s cubic-bezier(.22,.9,.28,1) both; }
+.hero-art-frame{ transition:transform .5s cubic-bezier(.22,.9,.28,1), box-shadow .5s; will-change:transform; }
+.hero-art-frame:hover{ transform:rotate(0deg) scale(1.015); box-shadow:0 24px 60px rgba(60,30,10,.28); }
+.hero-art-frame img{ transition:transform .8s cubic-bezier(.22,.9,.28,1); }
+.hero-art-frame:hover img{ transform:scale(1.06); }
+.hero-tag{ animation:prm-float 5.5s ease-in-out infinite; --prm-rot:-3deg; }
+.hero-tag .dot{ animation:prm-gold-pulse 2.6s ease-in-out infinite; }
+
+/* ---------- info strip ---------- */
+.info-strip div{ transition:transform .3s ease; }
+.info-strip div:hover{ transform:translateY(-2px); }
+.info-strip svg{ transition:transform .3s ease, color .3s ease; }
+.info-strip div:hover svg{ transform:scale(1.15); color:#fff; }
+
+/* ---------- category rail / legacy pills (kept functional, styled to match) ---------- */
+.cat-pill .ring{ transition:transform .35s cubic-bezier(.22,.9,.28,1), border-color .3s, box-shadow .3s; }
+.cat-pill:hover .ring{ transform:scale(1.06); box-shadow:0 10px 22px rgba(60,30,10,.22); }
+.cat-block-head img{ transition:transform .5s cubic-bezier(.22,.9,.28,1); }
+.cat-block-head:hover img{ transform:scale(1.05) rotate(-1deg); }
+
+/* ---------- mobile category cards ---------- */
+.mobile-category-card{ transition:transform .4s cubic-bezier(.22,.9,.28,1), box-shadow .4s ease, border-color .4s ease; }
+.mobile-category-card:before{ transition:transform .5s cubic-bezier(.22,.9,.28,1), background .4s ease; }
+.mobile-category-card:hover{ transform:translateY(-5px) scale(1.015); box-shadow:0 20px 42px rgba(60,30,10,.18); }
+.mobile-category-card:hover:before{ transform:scale(1.25); background:rgba(229,160,56,.28); }
+.mobile-category-arrow{ transition:transform .4s cubic-bezier(.22,.9,.28,1), background .3s ease, color .3s ease; }
+.mobile-category-card:hover .mobile-category-arrow{ transform:translate(2px,-2px) rotate(45deg); background:var(--brick); color:#fff; }
+.mobile-category-card h3{ transition:color .3s ease; }
+.mobile-category-card:hover h3{ color:var(--brick-dark); }
+
+/* ---------- mobile product cards ---------- */
+.mobile-product-card{ transition:transform .4s cubic-bezier(.22,.9,.28,1), box-shadow .4s ease; }
+.mobile-product-card:hover{ transform:translateY(-4px); box-shadow:0 18px 38px rgba(60,30,10,.18); }
+.mobile-product-image{ position:relative; }
+.mobile-product-image::after{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(180deg, transparent 55%, rgba(33,22,16,.16) 100%);
+  opacity:0; transition:opacity .35s ease;
+}
+.mobile-product-card:hover .mobile-product-image::after{ opacity:1; }
+.mobile-product-image img{ transition:transform .7s cubic-bezier(.22,.9,.28,1); }
+.mobile-product-card:hover .mobile-product-image img{ transform:scale(1.09); }
+.mobile-price{ transition:transform .25s ease; }
+.mobile-product-card:hover .mobile-price{ transform:translateX(1px); }
+.mobile-size-btn{ transition:transform .2s ease, background .2s ease, border-color .2s ease; }
+.mobile-size-btn:hover{ transform:translateY(-1px); border-color:var(--brick); }
+
+/* image placeholders get a gentle shimmer instead of sitting flat */
+.mobile-image-placeholder{
+  background:linear-gradient(100deg, transparent 0%, rgba(255,255,255,.5) 50%, transparent 100%), var(--cream-2);
+  background-size:340px 100%, 100% 100%;
+  animation:prm-shimmer 2.4s ease-in-out infinite;
+}
+
+/* mobile menu view slide gets a touch more finesse */
+.mobile-menu-view.open .mobile-product-grid{
+  animation:prm-rise .5s .05s cubic-bezier(.22,.9,.28,1) both;
+}
+.mobile-back-btn{ transition:transform .25s cubic-bezier(.22,.9,.28,1), background .25s ease; }
+.mobile-back-btn:hover{ transform:translateX(-3px); background:var(--cream-2); }
+.mobile-back-btn:active{ transform:translateX(-3px) scale(.92); }
+
+/* ---------- gallery coverflow ---------- */
+.cf-slide{ transition:transform .55s cubic-bezier(.22,.9,.28,1), opacity .5s ease; }
+.cf-slide img{ transition:filter .4s ease; }
+.cf-slide[data-i]:hover img{ filter:brightness(1.04) saturate(1.08); }
+.cf-arrow{ transition:transform .3s cubic-bezier(.22,.9,.28,1), background .3s ease, box-shadow .3s ease; }
+.cf-arrow:hover{ transform:scale(1.08); box-shadow:0 10px 22px rgba(60,30,10,.22); }
+.cf-arrow:active{ transform:scale(.94); }
+
+/* ---------- reviews ---------- */
+.review-card{ transition:transform .4s cubic-bezier(.22,.9,.28,1), box-shadow .4s ease; }
+.review-card:hover{ transform:translateY(-4px); box-shadow:0 16px 34px rgba(60,30,10,.16); }
+.review-stars{ letter-spacing:2px; }
+.review-avatar{ transition:transform .3s ease; }
+.review-card:hover .review-avatar{ transform:scale(1.08) rotate(-4deg); }
+
+/* ---------- about facts ---------- */
+.fact-card{ transition:transform .4s cubic-bezier(.22,.9,.28,1), box-shadow .4s ease; }
+.fact-card:hover{ transform:translateY(-4px); box-shadow:0 16px 32px rgba(60,30,10,.16); }
+.fact-card svg{ transition:transform .35s cubic-bezier(.22,.9,.28,1); }
+.fact-card:hover svg{ transform:rotate(-8deg) scale(1.1); }
+.hours-card, .map-frame{ transition:transform .4s cubic-bezier(.22,.9,.28,1), box-shadow .4s ease; }
+.hours-card:hover, .map-frame:hover{ transform:translateY(-3px); box-shadow:var(--shadow-2); }
+
+/* ---------- brush-title accent draws in ---------- */
+.brush-title::before{ transform:scaleX(0); transform-origin:left; animation:prm-underline-in .6s .15s cubic-bezier(.22,.9,.28,1) forwards; }
+
+/* ---------- scroll-fade upgrade: gentle blur-in on top of existing fade/translate ---------- */
+.scroll-fade{ filter:blur(4px); }
+.scroll-fade.in{ filter:blur(0); transition:opacity .6s ease, transform .6s ease, filter .6s ease; }
+
+/* ---------- footer / section dividers ---------- */
+.eyebrow-script{ display:inline-block; }
+section h2{ background-size:200% auto; }
+
+/* ---------- focus & accessibility polish ---------- */
+:focus-visible{ transition:outline-offset .15s ease; }
+button, a{ -webkit-tap-highlight-color:transparent; }
+
+/* ---------- reduced motion: keep everything visible, just calmer ---------- */
+@media (prefers-reduced-motion: reduce){
+  .prm-stagger.prm-armed > *{ animation:none; opacity:1; }
+  .hero-cta .btn-primary, .hero-tag, .hero-tag .dot, .mobile-image-placeholder{ animation:none; }
+  .scroll-fade{ filter:none; }
+}
+
+
+/* =========================================================
+   MOBILE-FIRST FOOD EXPERIENCE
+========================================================= */
+.loved-section{padding:34px 0 38px;background:var(--paper);overflow:hidden;}
+.loved-head{max-width:520px;margin-bottom:20px;}
+.loved-head h2{font-size:clamp(28px,7vw,40px);font-weight:600;margin-top:2px;}
+.loved-head p{font-size:12.5px;color:var(--ink-soft);margin-top:7px;line-height:1.55;}
+.loved-list{display:flex;flex-direction:column;gap:13px;}
+/* Image and copy share one seamless card: no inner padding/gap between them,
+   so the two panels read as a single shape instead of two boxes stacked
+   side by side. The card's own radius + overflow:hidden rounds only the
+   outward corners of the image; the edge touching the text stays a plain
+   straight line so it blends rather than looking boxed-in. */
+.loved-item{display:grid;grid-template-columns:1.15fr .85fr;gap:0;align-items:stretch;background:var(--cream);border:1px solid var(--line);border-radius:20px;box-shadow:0 8px 24px rgba(60,30,10,.07);overflow:hidden;transition:transform .45s cubic-bezier(.22,.9,.28,1),box-shadow .45s ease;}
+/* Reverse items actually swap sides (image left, copy right) via `order`,
+   using the same column ratio mirrored so image:copy proportions stay
+   consistent either way. */
+.loved-item-reverse{grid-template-columns:.85fr 1.15fr;}
+.loved-item-reverse .loved-image{order:-1;}
+.loved-item:hover{transform:translateY(-4px);box-shadow:0 18px 36px rgba(60,30,10,.14);}
+.loved-copy{padding:16px 18px;display:flex;flex-direction:column;justify-content:center;}
+.loved-number{font-size:9px;letter-spacing:2px;font-weight:800;color:var(--brick);}
+.loved-copy h3{font-size:17px;line-height:1.08;margin-top:4px;}
+.loved-copy p{font-size:10.5px;line-height:1.48;color:var(--ink-soft);margin-top:6px;}
+.loved-image{min-height:150px;position:relative;}
+.loved-image img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.22,.9,.28,1),filter .5s ease;}
+.loved-item:hover .loved-image img{transform:scale(1.08);filter:saturate(1.08);}
+.restaurant-story{padding:42px 0;background:var(--cream-2);overflow:hidden;}
+.story-head{margin-bottom:18px;}
+.story-head h2{font-size:clamp(29px,7vw,42px);font-weight:600;margin-top:2px;}
+.story-stack{display:flex;flex-direction:column;gap:13px;}
+.story-panel{min-height:220px;border-radius:22px;overflow:hidden;position:relative;background-image:var(--story-bg);background-size:cover;background-position:center;isolation:isolate;box-shadow:0 14px 32px rgba(60,30,10,.13);transition:transform .5s cubic-bezier(.22,.9,.28,1),box-shadow .5s ease;}
+.story-panel:hover{transform:translateY(-4px) scale(1.005);box-shadow:0 22px 44px rgba(60,30,10,.2);}
+.story-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,12,7,.52),rgba(20,12,7,.70));z-index:-1;}
+.story-text{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:20px;color:#fff;}
+.story-text span{font-size:9px;letter-spacing:2px;text-transform:uppercase;font-weight:800;color:var(--gold);margin-bottom:7px;}
+.story-text p{font-family:var(--display);font-size:18px;line-height:1.25;text-shadow:0 2px 12px rgba(0,0,0,.3);max-width:34ch;}
+@media(min-width:760px){.loved-section,.restaurant-story{padding:60px 0}.loved-list{gap:18px}.loved-item{border-radius:24px;grid-template-columns:1fr 1fr}.loved-copy{padding:34px}.loved-copy h3{font-size:24px}.loved-copy p{font-size:13px;max-width:42ch}.loved-image{min-height:280px}.story-panel{min-height:310px}.story-text{padding:32px}.story-text p{font-size:25px}}
+@media(prefers-reduced-motion:reduce){.loved-item,.story-panel,.loved-image img{transition:none}}
+
+
+/* ===== PRODUCT GRID FIX ===== */
+@media(max-width:430px){
+
+    .mobile-product-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:8px;
+        width:100%;
+        box-sizing:border-box;
+    }
+
+    .mobile-product-card{
+        width:100%;
+        max-width:none;
+        min-width:0;
+        justify-self:stretch;
+        box-sizing:border-box;
+        border-radius:14px;
+    }
+
+    .mobile-product-content{
+        padding:8px;
+    }
+
+    .mobile-product-name{
+        font-size:13px;
+    }
+
+    .mobile-price{
+        font-size:13px;
+    }
+}
+
+/* =========================
+   WHATSAPP NAV BUTTON
+========================= */
+.nav-whatsapp{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#25D366;
+  color:#fff;
+  font-weight:1000;
+  font-size:13.5px;
+  padding:10px 22px;
+  border-radius:100px;
+  box-shadow:var(--shadow-1);
+  transition:transform .18s, box-shadow .18s;
+  white-space:nowrap;
+}
+
+.nav-whatsapp:hover{
+  transform:translateY(-2px) scale(1.06);
+  box-shadow:0 10px 24px rgba(37,211,102,.38);
+  filter:saturate(1.08);
+}
+
+.nav-whatsapp:active{
+  transform:scale(.92);
+}
+
+.nav-whatsapp svg{
+  width:21px;
+  height:21px;
+  position:relative;
+  z-index:2;
+}
+
+.nav-whatsapp{
+  height:42px;
+  min-width:90px;
+  padding:0 22px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:100px; /* CALL button jaisa */
+  background:#25D366;
+  color:#fff;
+
+  font-size:13.5px;
+  font-weight:700;
+  text-decoration:none;
+
+  box-shadow:var(--shadow-1);
+  flex-shrink:0;
+
+  transition:transform .18s, box-shadow .18s;
+}
+
+.nav-whatsapp:hover{
+  transform:translateY(-2px);
+  box-shadow:var(--shadow-2);
+}
+
+.nav-whatsapp:active{
+  transform:scale(.96);
+}
+
+/* ================================
+   CATEGORY + SUB-CATEGORY IMAGE CARD
+   ================================ */
+
+.category-card,
+.sub-category-card,
+.category-item,
+.sub-category-item {
+    position: relative !important;
+    overflow: hidden !important;
+}
+/* =========================================
+   REMOVE IMAGES ONLY FROM CATEGORY CARDS
+   + SUB-CATEGORY CARDS
+   ========================================= */
+
+.mobile-category-card {
+    background-image: none !important;
+}
+
+/* Agar category card ke andar IMG laga hua hai */
+.mobile-category-card img {
+    display: none !important;
+}
+
+/* Agar pseudo-element se image/background aa raha ho */
+.mobile-category-card::before,
+.mobile-category-card::after {
+    background-image: none !important;
+}
+
+/* Card ka original background/color maintain rahe */
+.mobile-category-card {
+    background-color: #fffaf0 !important;
+}
+
+
+.site-footer {
+  text-align: center;
+  padding: 22px 15px;
+  background: #1f140f;
+  color: #f7ead5;
+  font-size: 14px;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.site-footer a {
+  color: #e8a52b;
+  font-weight: 700;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.footer-call-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 14px;
+  margin-left: 8px !important;
+  border-radius: 20px;
+  background: #e8a52b;
+  color: #1f140f !important;
+  font-weight: 800;
+  transition: .25s ease;
+}
+
+.footer-call-btn:active {
+  transform: scale(.94);
+}
+
+/* =========================================================
+   DELIVERY BIKE + FREE DELIVERY POSTER
+   ========================================================= */
+
+.delivery-animation {
+  width: 100%;
+  margin-top: 12px;
+  margin-bottom: 2px;
+  overflow: hidden;
+}
+
+.delivery-track {
+  position: relative;
+  width: 100%;
+  height: 82px;
+  border-bottom: 2px dashed rgba(45, 29, 20, 0.14);
+  overflow: hidden;
+}
+
+/* =========================================
+   BIKE + POSTER GROUP
+   ========================================= */
+
+.delivery-rider {
+  position: absolute;
+  left: -140px;
+  bottom: 5px;
+
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+
+  white-space: nowrap;
+
+  animation: deliveryRide 5s linear infinite;
+
+  z-index: 5;
+}
+
+/* =========================================
+   FREE DELIVERY POSTER
+   ========================================= */
+
+.delivery-poster {
+  position: relative;
+
+  min-width: 105px;
+  padding: 10px 12px;
+
+  background: #c94320;
+  color: #fff8e9;
+
+  border: 3px solid #261711;
+  border-radius: 8px;
+
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1.15;
+
+  letter-spacing: .6px;
+  text-align: center;
+
+  box-shadow:
+    4px 4px 0 rgba(38, 23, 17, .25);
+
+  transform: rotate(-2deg);
+
+  z-index: 6;
+}
+
+/* Poster stick */
+.delivery-poster::after {
+  content: "";
+
+  position: absolute;
+
+  width: 4px;
+  height: 22px;
+
+  background: #261711;
+
+  right: -6px;
+  bottom: -16px;
+
+  border-radius: 2px;
+
+  transform: rotate(-8deg);
+}
+
+/* =========================================
+   DELIVERY BIKE
+   ========================================= */
+
+.delivery-bike {
+  display: inline-block;
+
+  font-size: 48px;
+  line-height: 1;
+
+  /* Bike right side face karegi */
+  transform: scaleX(-1);
+
+  z-index: 5;
+}
+
+/* =========================================
+   BIKE MOVEMENT
+   ========================================= */
+
+@keyframes deliveryRide {
+
+  0% {
+    left: -150px;
+  }
+
+  100% {
+    left: calc(100% + 150px);
+  }
+
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+  .delivery-animation {
+    margin-top: 10px;
+    margin-bottom: 2px;
+  }
+
+  .delivery-track {
+    height: 78px;
+  }
+
+  .delivery-rider {
+    left: -135px;
+    bottom: 4px;
+  }
+
+  .delivery-poster {
+    min-width: 100px;
+
+    padding: 9px 11px;
+
+    font-size: 12px;
+
+    border-width: 3px;
+
+    box-shadow:
+      4px 4px 0 rgba(38, 23, 17, .25);
+  }
+
+  .delivery-bike {
+    font-size: 45px;
+  }
+
+}
+
+/* =========================================
+   VERY SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 380px) {
+
+  .delivery-track {
+    height: 72px;
+  }
+
+  .delivery-poster {
+    min-width: 90px;
+    padding: 8px 9px;
+    font-size: 11px;
+  }
+
+  .delivery-bike {
+    font-size: 41px;
+  }
+
+}
+
+/* =========================================
+   REDUCE MOTION ACCESSIBILITY
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .delivery-rider {
+    animation: none;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="site-nav">
+  <div class="wrap nav-row">
+    <a href="#home" class="brand">
+      <span class="brand-badge"><img src="assets/logo.jpg" alt="Brown Pizza Cafe logo"></span>
+      <span class="brand-name">Brown Pizza Cafe<small>PIZZA CAFE &middot; EST 2022</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+
+      <a href="#about">About</a>
+    </nav>
+<a class="nav-call" href="tel:+916394145995">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+  </svg>
+  <span>Buy Anything</span>
+</a>
+
+<!-- WHATSAPP BUTTON -->
+<a
+  class="nav-whatsapp"
+  href="https://wa.me/916394145995?text=hello%20sir%2C%20I%20want%20to%20order%20something."
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Buy on WhatsApp"
+>
+  BUY 
+</a>
+
+<!-- 3 LINE MENU -->
+<button
+  class="nav-burger"
+  id="burgerBtn"
+  aria-label="Menu"
+>
+  <span></span>
+</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="wrap">
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section id="home" class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy scroll-fade">
+      <span class="eyebrow-script">Wood-fired &amp; whatsapp-ordered</span>
+      <h1>Pizza that pulls,<br>every single <em>slice</em>.</h1>
+      <p>Hand-stretched pizzas, sizzling Chinese, shakes and more — cooked fresh on Baypas Road and sent straight to your door in Palia Kalan Kheri. Pure veg, always fresh, always cheesy.</p>
+<!-- DELIVERY BIKE + POSTER -->
+<div class="delivery-animation">
+  <div class="delivery-track">
+
+    <div class="delivery-rider">
+      <div class="delivery-poster">
+        FREE<br>DELIVERY
+      </div>
+
+      <span class="delivery-bike">🛵</span>
+    </div>
+
+  </div>
+</div>
+
+
+      <div class="hero-cta">
+        <a href="https://wa.me/916394145995?text=Hello%20Brown%20Pizza%20Cafe!%20I%27d%20like%20to%20buy%20something." target="_blank" rel="noopener" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          Buy Anything on WhatsApp
+        </a>
+        <a href="tel:+916394145995" class="btn btn-ghost">Call to Order</a>
+      </div>
+      
+      <div class="hero-stats">
+        <div><b>19</b><span>Menu categories</span></div>
+        <div><b>100%</b><span>Pure vegetarian</span></div>
+        <div><b>2022</b><span>Est. on Baypas Road</span></div>
+      </div>
+    </div>
+    <div class="hero-art scroll-fade">
+      <div class="hero-art-frame">
+        <img src="pizza/pic/superme.jpg" alt="Cheese pull from a fresh Brown Pizza Cafe pizza">
+      </div>
+      <div class="hero-tag">
+        <span class="dot">&#127829;</span>
+        <div><b>Fresh off the oven</b><span>Ordered &amp; baked daily</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INFO STRIP ============ -->
+<section class="info-strip">
+  <div class="wrap">
+    <div>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      <div><b>Baypas Road</b><span>Near Kamal Takes Chauraha, Palia Kalan Kheri</span></div>
+    </div>
+    <div>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      <div><b>10 AM – 10 PM</b><span>Open every day of the week</span></div>
+    </div>
+    <div>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <div><b>6394-14-5995</b><span>Call or WhatsApp for delivery</span></div>
+    </div>
+    <div>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+      <div><b>Order on WhatsApp</b><span>No app download needed</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MOST LOVED FOOD ============ -->
+<section class="loved-section" id="most-loved">
+  <div class="wrap">
+    <div class="loved-head scroll-fade">
+      <span class="eyebrow-script">Customer favourites</span>
+      <h2>Most Loved Food</h2>
+      <p>Small, delicious highlights from the menu — the kind of plates people come back for.</p>
+    </div>
+    <div class="loved-list">
+      <!-- Replace these five HTML image paths with your food photos. -->
+      <article class="loved-item loved-item-reverse scroll-fade"><div class="loved-copy"><span class="loved-number">01</span><h3>Tandoori Paneer Pizza</h3><p>Smoky paneer, fresh vegetables and a generous cheese layer come together on a crisp, hand-stretched base.</p></div><div class="loved-image"><img src="pizza/pic/tandori.jpg" alt="Tandoori Paneer Pizza" loading="lazy"></div></article>
+      <article class="loved-item scroll-fade"><div class="loved-copy"><span class="loved-number">02</span><h3>Veg Supreme Pizza</h3><p>A loaded, colourful favourite with capsicum, mushroom, sweet corn, olives and red paprika in every bite.</p></div><div class="loved-image"><img src="pizza/pic/superme.jpg" alt="Veg Supreme Pizza" loading="lazy"></div></article>
+      <article class="loved-item loved-item-reverse scroll-fade"><div class="loved-copy"><span class="loved-number">03</span><h3>Paneer Momos</h3><p>Soft, comforting momos packed with paneer and served with the chutney that makes the first bite disappear fast.</p></div><div class="loved-image"><img src="momos/pic/pm.jpg" alt="Paneer Momos" loading="lazy"></div></article>
+      <article class="loved-item scroll-fade"><div class="loved-copy"><span class="loved-number">04</span><h3>Kit Kat Shake</h3><p>Thick, chilled and indulgent — a sweet finish for pizza nights, family orders and late-evening cravings.</p></div><div class="loved-image"><img src="shakes/pic/k.jpg" alt="Kit Kat Shake" loading="lazy"></div></article>
+      <article class="loved-item loved-item-reverse scroll-fade"><div class="loved-copy"><span class="loved-number">05</span><h3>Paneer Wrap</h3><p>Warm, filling and easy to love, with seasoned paneer and fresh fillings rolled up for a quick bite.</p></div><div class="loved-image"><img src="wrap/pic/paneer.jpg" alt="Paneer Wrap" loading="lazy"></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MENU — MOBILE DESIGN ============ -->
+<section id="menu" class="mobile-menu-section">
+  <div class="mobile-wrap">
+    <div class="mobile-section-head">
+      <div class="mobile-eyebrow">The full board</div>
+      <h2>Choose a category</h2>
+      <p>Four clean category cards per row on mobile. Open a category to see two products per row.</p>
+    </div>
+    <div class="mobile-category-grid" id="mobileCategoryGrid"></div>
+
+    <!-- Hidden legacy menu targets keep the original index functionality intact
+         without displaying the old menu layout. -->
+    <div style="display:none!important" aria-hidden="true">
+      <div class="cat-rail" id="catRail"></div>
+      <div id="catBlocks"></div>
+    </div>
+  </div>
+</section>
+
+<div class="mobile-menu-view" id="mobileMenuView" aria-hidden="true">
+  <div class="mobile-menu-view-head">
+    <div class="mobile-wrap mobile-menu-view-bar">
+      <button class="mobile-back-btn" id="mobileBackBtn" aria-label="Back">←</button>
+      <div class="mobile-menu-view-title">
+        <h2 id="mobileViewTitle">Category</h2>
+        <span id="mobileViewMeta"></span>
+      </div>
+    </div>
+  </div>
+  <div class="mobile-wrap mobile-view-body">
+    <div class="mobile-product-grid" id="mobileProductGrid"></div>
+  </div>
+</div>
+
+<!-- ============ RESTAURANT STORY ============ -->
+<section class="restaurant-story" id="our-story">
+  <div class="wrap">
+    <div class="story-head scroll-fade"><span class="eyebrow-script">More than a meal</span><h2>Our Restaurant</h2></div>
+    <div class="story-stack">
+      <!-- Replace these HTML image paths with your restaurant/cafe photos. -->
+      <article class="story-panel scroll-fade" style="--story-bg:url('assets/1.jpg')"><div class="story-overlay"></div><div class="story-text"><span>01 · The beginning</span><p>Brown Pizza Cafe started with a simple idea: make comforting food fresh, serve it with warmth, and give Palia Kalan a place where every order feels worth coming back for.</p></div></article>
+      <article class="story-panel scroll-fade" style="--story-bg:url('assets/2.jpg')"><div class="story-overlay"></div><div class="story-text"><span>02 · Fresh from the kitchen</span><p>From hand-stretched pizza bases to sizzling Chinese dishes, pasta, burgers, wraps and shakes, our kitchen is built around food that is prepared fresh and served at its best.</p></div></article>
+      <article class="story-panel scroll-fade" style="--story-bg:url('assets/pr.jpg')"><div class="story-overlay"></div><div class="story-text"><span>03 · Pure vegetarian</span><p>Our menu is completely vegetarian, with plenty of choices for quick cravings, family meals, cheesy pizza nights, refreshing drinks and something sweet at the end.</p></div></article>
+      <article class="story-panel scroll-fade" style="--story-bg:url('assets/6.jpg')"><div class="story-overlay"></div><div class="story-text"><span>04 · Made for Palia Kalan</span><p>Whether you visit us or order from home, we want the experience to feel easy. Call us, message us on WhatsApp, choose what you love and let us take care of the rest.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY (3D coverflow) ============ -->
+<section class="gallery-section">
+  <div class="wrap">
+    <div class="gallery-head scroll-fade">
+      <div>
+        <span class="eyebrow-script" style="color:var(--gold)">A little taste</span>
+        <h2>From our kitchen<br>to your table.</h2>
+      </div>
+      <p>A quick look at what's coming out of the oven right now.</p>
+    </div>
+    <div class="coverflow" id="coverflow">
+      <div class="coverflow-track" id="cfTrack"></div>
+    </div>
+    <div class="cf-arrows">
+      <button class="cf-arrow" id="cfPrev" aria-label="Previous photo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="cf-arrow" id="cfNext" aria-label="Next photo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="reviews-section">
+  <div class="wrap">
+    <div class="reviews-head scroll-fade">
+      <span class="eyebrow-script">Kind words</span>
+      <h2>What Palia Kalan<br>is saying.</h2>
+    </div>
+  </div>
+  <div class="reviews-track-wrap">
+    <div class="wrap" style="padding:0;">
+      <div class="reviews-track" id="reviewsTrack"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT / CAFE DETAILS ============ -->
+<section id="about" class="about-section">
+  <div class="wrap about-grid">
+    <div class="about-copy scroll-fade">
+      <span class="eyebrow-script">Our story</span>
+      <h2>Brown Pizza Cafe</h2>
+      <p>Started in 2022 on Baypas Road near Kamal Takes Chauraha, Brown Pizza Cafe began as a small wood-fired pizza counter and grew into a full pure-veg kitchen — pizzas, Chinese, pasta, burgers, wraps, shakes and mocktails, all made fresh to order.</p>
+      <p>Every pizza is hand-stretched and baked to order, our Chinese counter fires up fresh Hakka and Schezwan, and our shake counter is where most regulars end their visit. Delivery runs across Palia Kalan Kheri — just call, WhatsApp, or order right from this menu.</p>
+      <div class="about-facts">
+        <div class="fact-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          <b>19 menu categories</b><span>Pizza, Chinese, pasta &amp; more</span>
+        </div>
+        <div class="fact-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z"/></svg>
+          <b>100% pure vegetarian</b><span>Every single item on the menu</span>
+        </div>
+        <div class="fact-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+          <b>Wood-fired &amp; fresh</b><span>Every order made after you place it</span>
+        </div>
+        <div class="fact-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <b>Fast delivery</b><span>Across Palia Kalan Kheri</span>
+        </div>
+      </div>
+    </div>
+    <div class="hours-card scroll-fade">
+      <span class="eyebrow-script">Find us open</span>
+      <h3>Hours &amp; Delivery</h3>
+      <div class="hours-row"><span>Monday – Sunday</span><span>10:00 AM – 10:00 PM</span></div>
+<div class="hours-row"><span>Delivery window</span><span>10:00 AM – 10:00 PM</span></div>
+      <div class="hours-row"><span>Dine-in / takeaway</span><span>All day</span></div>
+      <div class="hours-row" style="border-bottom:0;"><span>Order by</span><span>WhatsApp or Call</span></div>
+      <p class="hours-note">Delivery charges and exact timing depend on your distance from Baypas Road and are confirmed with you on WhatsApp before your order is prepared.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="contact-section">
+  <div class="wrap contact-grid">
+    <div class="scroll-fade">
+      <span class="eyebrow-script">Get in touch</span>
+      <h2>Come say hi, or<br>just order in.</h2>
+      <p>We're right on Baypas Road, near Kamal Takes Chauraha in Palia Kalan Kheri — easy to spot, easy to reach.</p>
+      <div class="contact-cards">
+        <a class="contact-card" href="tel:+916394145995">
+          <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+          <div><b>6394-14-5995</b><span>Tap to call for delivery</span></div>
+        </a>
+        <a class="contact-card" href="https://wa.me/916394145995" target="_blank" rel="noopener">
+          <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <div><b>WhatsApp Us</b><span>Fastest way to place an order</span></div>
+        </a>
+        <a class="contact-card" href="#" id="contactAddrLink" target="_blank" rel="noopener">
+          <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></span>
+<div>
+  <b>Baypas Road, Palia Kalan Kheri</b>
+  <span>Near Kamal Takes Chauraha</span>
+</div>
+</a>
+</div>
+</div>
+
+<div class="map-frame scroll-fade">
+  <iframe
+    loading="lazy"
+    allowfullscreen
+    referrerpolicy="strict-origin-when-cross-origin"
+    src="https://www.google.com/maps?q=Brown+Pizza+Cafe,+Bypass+Rd,+Makanpur,+Palia+Kalan,+Uttar+Pradesh+262902&output=embed"
+    title="Brown Pizza Cafe location">
+  </iframe>
+</div>
+
+</div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="assets/logo.jpg" alt="Brown Pizza Cafe">
+        <b>Brown Pizza Cafe</b>
+      </div>
+      <div class="footer-links">
+        <div>
+          <b>Explore</b>
+          <a href="#home">Home</a>
+          <a href="#menu">Menu</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div>
+          <b>Order</b>
+          <a href="tel:+916394145995">Call 6394-14-5995</a>
+          <a href="https://wa.me/916394145995" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Brown Pizza Cafe &middot; Palia Kalan Kheri</span>
+      <span>Delicious Pizza Always</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" aria-live="polite"></div>
+
+<footer class="site-footer">
+  <p>
+    For making this type of website please contact
+    <a href="tel:+9151443880">+91 51443880</a>
+    <a href="tel:+9151443880" class="footer-call-btn" aria-label="Call for website">
+      ☎ Call
+    </a>
+  </p>
+</footer>
+<script>
+/* =========================================================
+   BROWN PIZZA CAFE — SINGLE SOURCE MENU SCRIPT
+
+   MENU is the ONLY product data source.
+   Product image path is written ONCE per product.
+   Desktop + mobile read the same MENU objects.
+========================================================= */
+
+const MENU = [
+  { id:"noodles", name:"Noodles", img:"noodles/pic/cg.jpg", items:[
+    {n:"Hakka Noodles", p:130, img:"noodles/pic/hakka.jpg"},
+    {n:"Chilli Garlic Noodles", p:150, img:"noodles/pic/cg.jpg"},
+    {n:"Schezwan Noodles", p:180, img:"noodles/pic/sweg.jpg"},
+    {n:"Paneer Noodles", p:200, img:"noodles/pic/p.jpg"},
+  ]},
+
+  { id:"potato", name:"Chinese Potato", img:"potato/pic/cp.jpg", items:[
+    {n:"Chilli Potato", p:150, img:"potato/pic/cp.jpg"},
+    {n:"Honey Chilli Potato", p:180, img:"potato/pic/hp.jpg"},
+  ]},
+
+  { id:"momos", name:"Momos & More", img:"assets/chinese_momos.jpg", items:[
+    {n:"Veg Steamed Momos", d:"6 pcs, served with chutney", p:60, img:"momos/pic/vm.jpg"},
+    {n:"Veg Fried Momos", d:"6 pcs, served with chutney", p:80, img:"momos/pic/fm.jpg"},
+    {n:"Paneer Steamed Momos", d:"6 pcs, served with chutney", p:80, img:"momos/pic/pm.jpg"},
+    {n:"Paneer Fried Momos", d:"6 pcs, served with chutney", p:100, img:"momos/pic/fpm.jpg"},
+    {n:"Chilli Paneer", p:200, img:"momos/pic/cp.jpg"},
+    {n:"Crispy Corn", p:150, img:"momos/pic/cc.jpg"},
+    {n:"Plain Maggi", p:70, img:"momos/pic/m.jpg"},
+    {n:"Paneer Maggi", p:100, img:"momos/pic/pmm.jpg"},
+  ]},
+
+  { id:"shakes", name:"Shakes", img:"assets/strawberry_shake.jpg", items:[
+    {n:"Strawberry Shake", s2:[109,139], img:"shakes/pic/s.jpg"},
+    {n:"Oreo Shake", s2:[109,139], img:"shakes/pic/o.jpg"},
+    {n:"Banana Shake", s2:[109,139], img:"shakes/pic/b.jpg"},
+    {n:"Vanilla Shake", s2:[129,159], img:"shakes/pic/v.jpg"},
+    {n:"Kit Kat Shake", s2:[129,159], img:"shakes/pic/k.jpg"},
+    {n:"Blue Berry Shake", s2:[129,159], img:"shakes/pic/bc.jpg"},
+    {n:"Cold Coffee", s2:[99,129], img:"shakes/pic/cf.jpg"},
+    {n:"Butterscotch Shake", p:129, img:"shakes/pic/buter.jpg"},
+    {n:"Rasmalai Shake", p:129, img:"shakes/pic/r.jpg"},
+  ]},
+
+  { id:"mocktails", name:"Mocktails", img:"assets/.jpg", items:[
+    {n:"Virgin Mojito", p:99, img:"mocktails/pic/v.jpg"},
+    {n:"Masala Lemonade", p:99, img:"mocktails/pic/mm.jpg"},
+    {n:"Blue Ocean Mojito", p:99, img:"mocktails/pic/ow.jpg"},
+    {n:"Green Apple Mojito", p:99, img:"mocktails/pic/g.jpg"},
+    {n:"Mint Mojito", p:99, img:"mocktails/pic/mm.jpg"},
+    {n:"Watermelon Mojito", p:99, img:"mocktails/pic/wm.jpg"},
+    {n:"Blue Berry Mocktail", p:99, img:"mocktails/pic/bm.jpg"},
+  ]},
+
+  { id:"softdrinks", name:"Soft Drinks", img:"assets/redbull.jpg", items:[
+    {n:"Red Bull", p:125, img:"softdrinks/pic/rb.jpg"},
+    {n:"Coke / Thumbs Up / Sprite", d:"300 ml", p:30, img:"softdrinks/pic/a.jpg"},
+  ]},
+
+  { id:"desserts", name:"Desserts", img:"assets/butterscotch_icecream.jpg", items:[
+    {n:"Choco Velcano", p:79, img:"desserts/pic/cl.jpg"},
+    {n:"Browine", p:79, img:"desserts/pic/b.jpg"},
+    {n:"Browine with White Icecream", p:99, img:"desserts/pic/bw.jpg"},
+    {n:"Vanilla Icecream", p:30, img:"desserts/pic/v.jpg"},
+    {n:"Butterscotch Icecream", p:50, img:"desserts/pic/cbu.jpg"},
+  ]},
+
+  { id:"sandwich", name:"Sandwiches", img:"assets/sandwich.jpg", items:[
+    {n:"Fresh Veggies Sandwich", p:129, img:"sandwich/pic/veg.jpg"},
+    {n:"Paneer Sandwich", p:149, img:"sandwich/pic/p.jpg"},
+    {n:"Cheese Corn Sandwich", p:149, img:"sandwich/pic/ccorns.jpg"},
+    {n:"Creamy Mushroom Sandwich", p:149, img:"sandwich/pic/m.jpg"},
+    {n:"Paneer Corn Sandwich", p:179, img:"sandwich/pic/pc.jpg"},
+    {n:"Cheese Creamy Sandwich", p:149, img:"sandwich/pic/ccs.jpg"},
+  ]},
+
+  { id:"snacks", name:"Snacks", img:"assets/fries.jpg", items:[
+    {n:"French Fries", p:59, img:"snacks/pic/ff.jpg"},
+    {n:"Fries Peri Peri", p:69, img:"snacks/pic/peri.jpg"},
+    {n:"Classic Veg Roll", p:69, img:"snacks/pic/vr.jpg"},
+    {n:"Paneer Roll", p:99, img:"snacks/pic/pr.jpg"},
+    {n:"Cheese Corn Roll", p:99, img:"snacks/pic/ccr.jpg"},
+    {n:"Stuffed Garlic Bread", p:179, img:"snacks/pic/special_s.jpg"},
+    {n:"Cheese Garlic Bread", p:149, img:"snacks/pic/cgb.jpg"},
+    {n:"Tandoori French Fries", p:99, img:"snacks/pic/mf.jpg"},
+    {n:"Crunchy Paneer Finger", p:150, img:"snacks/pic/pf.jpg"},
+    {n:"Crunchy Cheese Nuggets", p:100, img:"snacks/pic/n.jpg"},
+    {n:"Crunchy Cheese Balls", p:100, img:"snacks/pic/pb.jpg"},
+    {n:"Paneer Pav Bhaji", p:99, img:"snacks/pic/ppb.jpg"},
+    {n:"Crnucy Momos", d:"6 pieces", p:180, img:"snacks/pic/crmm.jpg"},
+  ]},
+
+  { id:"teacoffee", name:"Tea & Coffee", img:"assets/hot_coffee.jpg", items:[
+    {n:"Kulhad Chai", p:49, img:"teacoffee/pic/k.jpg"},
+    {n:"Desi Chai", p:49, img:"teacoffee/pic/d.jpg"},
+    {n:"Hot Coffee", p:59, img:"teacoffee/pic/hc.jpg"},
+  ]},
+
+  { id:"pz_signature", name:"Pizza — Signature", img:"assets/pizza_signature.jpg", sizeLabel:["Regular","Medium","Large"], items:[
+    {n:"Country Delight", d:"Onion, capsicum, mushroom, tomato, sweet corn", s:[249,449,599], img:"pizza/pic/vegdelight.jpg"},
+    {n:"Farmers Delight", d:"Onion, capsicum, jalapeno, mushroom, baby corn", s:[249,449,599], img:"pizza/pic/vegdeluxe.jpg"},
+    {n:"Tandoori Paneer", d:"Onion, capsicum, tomato, paneer, red paprika", s:[249,449,599], img:"pizza/pic/tandori.jpg"},
+    {n:"Mazedar Makhni", d:"Onion, capsicum, paneer with makhni sauce", s:[249,449,599], img:"pizza/pic/pno.jpg"},
+    {n:"Veg Lover", d:"Onion, capsicum, mushroom, tomato, red paprika", s:[249,449,599], img:"pizza/pic/vegdelight.jpg"},
+    {n:"Peppy Paneer Pizza", d:"Onion, capsicum, paneer", s:[249,449,599], img:"pizza/pic/pm.jpg"},
+    {n:"Hawaiian Pineapple Pizza", d:"Capsicum, corn, pineapple, paneer, red paprika", s:[249,449,599], img:"pizza/pic/pa.jpg"},
+  ]},
+
+  { id:"pz_supreme", name:"Pizza — Supreme", img:"assets/pizza_supreme.jpg", sizeLabel:["Regular","Medium","Large"], items:[
+    {n:"Veg Supreme", d:"Onion, capsicum, mushroom, sweet corn, black olive, red paprika", s:[299,549,699], img:"pizza/pic/maxian.jpg"},
+    {n:"Veggie Exotica", d:"Capsicum, mushroom, black olive, jalapeno, baby corn", s:[299,549,699], img:"pizza/pic/pizza.jpg"},
+    {n:"Double Paneer Supreme", d:"Onion, capsicum, paneer, red paprika", s:[299,549,699], img:"pizza/pic/cc.jpg"},
+    {n:"Veg Italiano", d:"Capsicum, mushroom, sweet corn, black olive, jalapeno", s:[299,549,699], img:"pizza/pic/ot.jpg"},
+  ]},
+
+  { id:"pz_newarrival", name:"Pizza — New Arrivals", img:"assets/pizza_newarrival.jpg", items:[
+    {n:"Farm House Pizza", d:"Onion, capsicum, tomato, tandoori mushroom · Signature, Regular", s:[249,449,599] , img:"pizza/pic/fh.jpg"},
+    {n:"Burn To Hell Pizza", d:"Jalapeno, mushroom, black olive, capsicum · Signature, Medium",s:[249,449,599] , img:"pizza/pic/golden.jpg"},
+    {n:"Peri Peri Veg Pizza", d:"Onion, capsicum, mushroom, paneer, olive, peri peri drizzle · Supreme, Regular", s:[299,449,599] , img:"pizza/pic/greenp.jpg"},
+    {n:"Veggie Paradise", d:"Golden corn, capsicum, black olive, red paprika, paneer, tandoori mushroom · Supreme, Medium", s:[249,549,699] , img:"pizza/pic/lovers.jpg"},
+  ]},
+
+  { id:"pz_classic", name:"Pizza — Classic", img:"assets/pizza_classic.jpg", sizeLabel:["Regular","Medium","Large"], items:[
+    {n:"Classic Onion", s:[119,199,349], img:"pizza/pic/onionb.jpg"},
+    {n:"Cheese Onion", s:[119,199,349], img:"pizza/pic/coo.jpg"},
+    {n:"Classic Corn", s:[119,199,349], img:"pizza/pic/cc.jpg"},
+    {n:"Cheese Corn", s:[119,199,349], img:"pizza/pic/ccp.jpg"},
+    {n:"Classic Tomato", s:[119,199,349], img:"pizza/pic/ot.jpg"},
+    {n:"Cheese Tomato", s:[119,199,349], img:"pizza/pic/ct.jpg"},
+    {n:"Classic Capsicum", s:[119,199,349], img:"pizza/pic/vegdelight.jpg"},
+    {n:"Cheese Capsicum", s:[119,199,349], img:"pizza/pic/ccp.jpg"},
+  ]},
+
+  { id:"pz_favourite", name:"Pizza — Favourite", img:"assets/pizza_favourite.jpg", sizeLabel:["Regular","Medium","Large"], items:[
+    {n:"Onion Capsicum", s:[159,299,449], img:"pizza/pic/onionb.jpg"},
+    {n:"Cheese Onion Capsicum", s:[159,299,449], img:"pizza/pic/chessef.jpg"},
+    {n:"Paneer Corn", s:[159,299,449], img:"pizza/pic/cc.jpg"},
+    {n:"Cheese Paneer Corn", s:[159,299,449], img:"pizza/pic/spb.jpg"},
+    {n:"Paneer Capsicum", s:[159,299,449], img:"pizza/pic/sp.jpg"},
+    {n:"Cheese Paneer Capsicum", s:[159,299,449], img:"pizza/pic/maxian.jpg"},
+    {n:"Paneer Mushroom", s:[159,299,449], img:"pizza/pic/superme.jpg"},
+    {n:"Cheese Paneer Mushroom", s:[159,299,449], img:"pizza/pic/cm.jpg"},
+  ]},
+
+  { id:"pz_delight", name:"Pizza — Delight", img:"assets/pizza_delight.jpg", sizeLabel:["Regular","Medium","Large"], items:[
+    {n:"Veg Delight", d:"Onion, capsicum, sweet corn", s:[199,349,499], img:"pizza/pic/vegdelight.jpg"},
+    {n:"Veg Tandoori", d:"Onion, capsicum, mushroom", s:[199,349,499], img:"pizza/pic/ex.jpg"},
+    {n:"Cheesy Maxican", d:"Capsicum, jalapeno, sweet corn, harissa drizzle", s:[199,349,499], img:"pizza/pic/maxian.jpg"},
+    {n:"Indian Delicious Pizza", d:"Onion, corn, paneer topping", s:[199,349,499], img:"pizza/pic/indian.jpg"},
+    {n:"Spiced Veg Paneer", d:"Onion, tomato, paneer", s:[199,349,499], img:"pizza/pic/pm.jpg"},
+    {n:"Double Cheese", d:"Extra cheese", s:[199,349,499], img:"pizza/pic/cc.jpg"},
+    {n:"Special Pineapple", d:"Corn, mushroom, pineapple", s:[199,349,499], img:"pizza/pic/pa.jpg"},
+  ]},
+
+  { id:"pasta", name:"Pasta", img:"assets/pasta.jpg", items:[
+    {n:"Schezwan Fried Pasta", p:149, img:"pasta/pic/s.jpg"},
+    {n:"Red Sauce Pasta", p:149, img:"pasta/pic/red.jpg"},
+    {n:"White Sauce Pasta", p:149, img:"pasta/pic/white.jpg"},
+    {n:"Cheesy Comfort Pasta", p:149, img:"pasta/pic/ccc.jpg"},
+    {n:"Cheesy Mexican Mushroom", p:149, img:"pasta/pic/cm.jpg"},
+    {n:"Americano White Pasta", p:199, img:"pasta/pic/aw.jpg"},
+    {n:"Mix Sauce Pasta", p:149, img:"pasta/pic/mix.jpg"},
+    {n:"Tandoori Pasta", p:149, img:"pasta/pic/tandoor.jpg"},
+  ]},
+
+  { id:"burger", name:"Burger", img:"assets/burger.jpg", items:[
+    {n:"Classic Burger", p:59, img:"burger/pic/at.jpg"},
+    {n:"Crispy Veg Burger", p:69, img:"burger/pic/veg.jpg"},
+    {n:"Makhni Burger", p:89, img:"burger/pic/m.jpg"},
+    {n:"Masala Paneer Burger", p:99, img:"burger/pic/spicy.jpg"},
+    {n:"Paneer Makhni Burger", p:109, img:"burger/pic/chessyburger.jpg"},
+    {n:"Supreme Burger", p:129, img:"burger/pic/special.jpg"},
+    {n:"Paneer Crunchy Burger", p:159, img:"burger/pic/panir.jpg"},
+  ]},
+
+  { id:"wrap", name:"Wrap", img:"assets/wrap.jpg", items:[
+    {n:"Classic Wrap", p:79, img:"wrap/pic/c.jpg"},
+    {n:"Veggies Wrap", p:99, img:"wrap/pic/veg.jpg"},
+    {n:"Paneer Wrap", p:149, img:"wrap/pic/paneer.jpg"},
+  ]},
+];
+
+const WHATSAPP_NUMBER = "916394145995";
+
+/* =========================================================
+   STATE
+========================================================= */
+
+const selState = {};
+
+function itemKey(catId, idx){
+  return catId + "-" + idx;
+}
+
+/* =========================================================
+   DESKTOP MENU
+========================================================= */
+
+function renderRail(){
+  const rail = document.getElementById("catRail");
+  if(!rail) return;
+
+  rail.innerHTML = MENU.map(cat => `
+    <a href="#cat-${cat.id}" class="cat-pill" data-cat="${cat.id}">
+      <span class="ring">
+        <img src="${cat.img}" alt="${cat.name}" loading="lazy">
+      </span>
+      <p>${cat.name}</p>
+    </a>
+  `).join("");
+}
+
+function priceLabel(item){
+  const st = selState[item._key] || {
+    sizeIdx:0,
+    qty:1
+  };
+
+  if(item.s2){
+    return `<span class="price-tag">₹${item.s2[st.sizeIdx]}</span>`;
+  }
+
+  if(item.s){
+    return `<span class="price-tag">₹${item.s[st.sizeIdx]}</span>`;
+  }
+
+  return `<span class="price-tag">₹${item.p}</span>`;
+}
+
+function sizeChips(item, catId, idx){
+  let sizes = null;
+  let labels = null;
+
+  if(item.s2){
+    sizes = item.s2;
+    labels = ["Regular","Large"];
+  }
+  else if(item.s){
+    sizes = item.s;
+
+    labels =
+      MENU.find(c => c.id === catId)?.sizeLabel ||
+      ["Regular","Medium","Large"];
+  }
+
+  if(!sizes) return "";
+
+  const st = selState[item._key];
+
+  return `
+    <div class="size-chips">
+      ${sizes.map((price,i)=>`
+        <button
+          type="button"
+          class="size-chip ${st.sizeIdx===i ? 'sel' : ''}"
+          data-key="${item._key}"
+          data-size="${i}">
+          ${labels[i] || ("Size " + (i+1))} ₹${price}
+        </button>
+      `).join("")}
+    </div>
+  `;
+}
+
+function renderBlocks(){
+  const wrap = document.getElementById("catBlocks");
+  if(!wrap) return;
+
+  wrap.innerHTML = MENU.map(cat => {
+
+    const rows = cat.items.map((item,idx)=>{
+
+      item._key = itemKey(cat.id,idx);
+
+      if(!selState[item._key]){
+        selState[item._key] = {
+          sizeIdx:0,
+          qty:1
+        };
+      }
+
+      return `
+        <div class="dish" data-key="${item._key}">
+
+          <div class="dish-info">
+
+            <div class="dish-name">
+              <span class="veg-mark"></span>
+              ${item.n}
+            </div>
+
+            ${
+              item.d
+              ? `<div class="dish-desc">${item.d}</div>`
+              : ""
+            }
+
+          </div>
+
+          <div class="dish-controls">
+            ${sizeChips(item,cat.id,idx)}
+            <span class="price-slot">
+              ${priceLabel(item)}
+            </span>
+          </div>
+
+        </div>
+      `;
+    }).join("");
+
+    return `
+      <div class="cat-block" id="cat-${cat.id}">
+
+        <div class="cat-block-head">
+
+          <img
+            src="${cat.img}"
+            alt="${cat.name}"
+            loading="lazy">
+
+          <h3>${cat.name}</h3>
+
+          <span class="cat-count">
+            ${cat.items.length} items
+          </span>
+
+        </div>
+
+        <div class="dish-list">
+          ${rows}
+        </div>
+
+      </div>
+    `;
+
+  }).join("");
+}
+
+function findItem(catId,idx){
+  const cat = MENU.find(c => c.id === catId);
+  return cat ? cat.items[idx] : null;
+}
+
+function splitKey(key){
+  const i = key.lastIndexOf("-");
+  return [
+    key.slice(0,i),
+    key.slice(i+1)
+  ];
+}
+
+document.addEventListener("click",(e)=>{
+
+  const chip = e.target.closest(".size-chip");
+
+  if(!chip) return;
+
+  const key = chip.dataset.key;
+
+  if(!selState[key]) return;
+
+  selState[key].sizeIdx =
+    parseInt(chip.dataset.size,10) || 0;
+
+  const dish = chip.closest(".dish");
+
+  if(dish){
+    dish
+      .querySelectorAll(".size-chip")
+      .forEach(c =>
+        c.classList.toggle("sel",c === chip)
+      );
+  }
+
+  const [catId,idxStr] = splitKey(key);
+
+  const item =
+    findItem(
+      catId,
+      parseInt(idxStr,10)
+    );
+
+  if(dish && item){
+    dish.querySelector(".price-slot").innerHTML =
+      priceLabel(item);
+  }
+
+});
+
+/* =========================================================
+   MOBILE HAMBURGER
+========================================================= */
+
+const mobileMenu =
+  document.getElementById("mobileMenu");
+
+function closeMobileMenu(){
+  if(mobileMenu){
+    mobileMenu.classList.remove("open");
+  }
+}
+
+const burgerBtn =
+  document.getElementById("burgerBtn");
+
+if(burgerBtn && mobileMenu){
+  burgerBtn.addEventListener(
+    "click",
+    () => mobileMenu.classList.toggle("open")
+  );
+}
+
+document
+  .querySelectorAll(".mobile-menu a[href^='#']")
+  .forEach(a =>
+    a.addEventListener("click",closeMobileMenu)
+  );
+
+/* =========================================================
+   REVIEWS
+========================================================= */
+
+const REVIEWS = [
+  {
+    name:"Ankit Verma",
+    init:"AV",
+    text:"The paneer tikka pizza is unreal — cheese pull jaisa video mein dikhta hai bilkul waisa hi milta hai. Delivery bhi fast thi.",
+    stars:5
+  },
+  {
+    name:"Priya Gupta",
+    init:"PG",
+    text:"Blue ocean mojito aur momos ka combo try karo, best hai. Poori family ke liye kuch na kuch mil jata hai menu mein.",
+    stars:5
+  },
+  {
+    name:"Rohit Saxena",
+    init:"RS",
+    text:"Highway pe itna acha wood-fired pizza milna mushkil hai. Crust perfectly crispy, staff bhi bahut polite hai.",
+    stars:4
+  },
+  {
+    name:"Sneha Mishra",
+    init:"SM",
+    text:"WhatsApp pe order karna kitna easy hai, address bhej diya aur time pe pizza aa gaya, garam garam.",
+    stars:5
+  },
+  {
+    name:"Karan Yadav",
+    init:"KY",
+    text:"Shakes bohot thick aur tasty hain, khaskar Kit Kat wala. Cafe ka vibe bhi kaafi acha hai baithne ke liye.",
+    stars:5
+  }
+];
+
+function renderReviews(){
+
+  const track =
+    document.getElementById("reviewsTrack");
+
+  if(!track) return;
+
+  track.innerHTML =
+    REVIEWS.map(r => `
+
+      <div class="review-card">
+
+        <div class="review-stars">
+          ${"★".repeat(r.stars)}
+          ${"☆".repeat(5-r.stars)}
+        </div>
+
+        <p class="review-quote">
+          ${r.text}
+        </p>
+
+        <div class="review-who">
+
+          <span class="review-avatar">
+            ${r.init}
+          </span>
+
+          <div>
+            <b>${r.name}</b>
+            <span>Palia Kalan Kheri</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    `).join("");
+}
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+const GALLERY = [
+  {
+    img:"2.jpg",
+    cap:"A warm table at Brown Pizza Cafe"
+  },
+  {
+    img:"pr.jpg",
+    cap:"Our kitchen, fresh and lively"
+  },
+  {
+    img:"2.jpg",
+    cap:"A place made for food lovers"
+  },
+  {
+    img:"1.jpg",
+    cap:"Main View"
+  },
+  {
+    img:"5.jpg",
+    cap:"our reception"
+  },
+  {
+      img:"3.jpg",
+      cap:"Inner view"
+  }
+];
+
+let cfIndex = 0;
+let cfTimer = null;
+
+function renderCoverflow(){
+
+  const track =
+    document.getElementById("cfTrack");
+
+  if(!track) return;
+
+  track.innerHTML =
+    GALLERY.map((g,i)=>`
+
+      <div
+        class="cf-slide"
+        data-i="${i}">
+
+        <img
+          src="assets/${g.img}"
+          alt="${g.cap}"
+          loading="lazy">
+
+        <div class="cf-caption">
+          ${g.cap}
+        </div>
+
+      </div>
+
+    `).join("");
+
+  layoutCoverflow();
+}
+
+function layoutCoverflow(){
+
+  const n = GALLERY.length;
+
+  const slides =
+    document.querySelectorAll(".cf-slide");
+
+  if(!slides.length) return;
+
+  const spread =
+    window.innerWidth < 760
+      ? 150
+      : 250;
+
+  slides.forEach((slide,i)=>{
+
+    let offset = i - cfIndex;
+
+    if(offset > n/2){
+      offset -= n;
+    }
+
+    if(offset < -n/2){
+      offset += n;
+    }
+
+    let tx=0;
+    let tz=0;
+    let ry=0;
+    let sc=1;
+    let op=1;
+    let zi=10;
+
+    const ao = Math.abs(offset);
+
+    if(ao===0){
+      tx=0;
+      tz=0;
+      ry=0;
+      sc=1;
+      op=1;
+      zi=30;
+    }
+    else if(ao<=1){
+      tx=offset*spread;
+      tz=-160;
+      ry=offset*-38;
+      sc=.8;
+      op=.92;
+      zi=20;
+    }
+    else if(ao<=2){
+      tx=offset*(spread*.92);
+      tz=-320;
+      ry=offset*-42;
+      sc=.62;
+      op=.55;
+      zi=10;
+    }
+    else{
+      tx=offset*(spread*.8);
+      tz=-420;
+      ry=offset*-42;
+      sc=.4;
+      op=0;
+      zi=1;
+    }
+
+    slide.style.transform =
+      `translateX(${tx}px)
+       translateZ(${tz}px)
+       rotateY(${ry}deg)
+       scale(${sc})`;
+
+    slide.style.opacity = op;
+    slide.style.zIndex = zi;
+
+    slide.style.pointerEvents =
+      ao===0 ? "auto" : "none";
+
+  });
+}
+
+function cfGoTo(i){
+
+  const n = GALLERY.length;
+
+  cfIndex =
+    ((i % n) + n) % n;
+
+  layoutCoverflow();
+}
+
+function cfNext(){
+  cfGoTo(cfIndex+1);
+}
+
+function cfPrev(){
+  cfGoTo(cfIndex-1);
+}
+
+function startAutoplay(){
+
+  stopAutoplay();
+
+  cfTimer =
+    setInterval(
+      () => cfGoTo(cfIndex-1),
+      2800
+    );
+}
+
+function stopAutoplay(){
+
+  if(cfTimer){
+    clearInterval(cfTimer);
+  }
+}
+
+function restartAutoplayDelayed(){
+
+  stopAutoplay();
+
+  clearTimeout(
+    restartAutoplayDelayed._t
+  );
+
+  restartAutoplayDelayed._t =
+    setTimeout(
+      startAutoplay,
+      4500
+    );
+}
+
+const cfNextBtn =
+  document.getElementById("cfNext");
+
+const cfPrevBtn =
+  document.getElementById("cfPrev");
+
+const coverflowEl =
+  document.getElementById("coverflow");
+
+if(cfNextBtn){
+
+  cfNextBtn.addEventListener(
+    "click",
+    ()=>{
+      cfNext();
+      restartAutoplayDelayed();
+    }
+  );
+
+}
+
+if(cfPrevBtn){
+
+  cfPrevBtn.addEventListener(
+    "click",
+    ()=>{
+      cfPrev();
+      restartAutoplayDelayed();
+    }
+  );
+
+}
+
+if(coverflowEl){
+
+  coverflowEl.addEventListener(
+    "mouseenter",
+    stopAutoplay
+  );
+
+  coverflowEl.addEventListener(
+    "mouseleave",
+    startAutoplay
+  );
+
+}
+
+window.addEventListener(
+  "resize",
+  layoutCoverflow
+);
+
+/* =========================================================
+   SCROLL FADE
+========================================================= */
+
+function setupScrollFade(){
+
+  const els =
+    document.querySelectorAll(".scroll-fade");
+
+  if(!els.length) return;
+
+  const io =
+    new IntersectionObserver(
+      entries =>
+        entries.forEach(en=>{
+          if(en.isIntersecting){
+
+            en.target.classList.add("in");
+
+            io.unobserve(en.target);
+
+          }
+        }),
+      {
+        threshold:.15
+      }
+    );
+
+  els.forEach(
+    el => io.observe(el)
+  );
+}
+
+/* =========================================================
+   CATEGORY RAIL ACTIVE STATE
+========================================================= */
+
+function setupRailSync(){
+
+  const blocks =
+    document.querySelectorAll(".cat-block");
+
+  const pills =
+    document.querySelectorAll(".cat-pill");
+
+  if(!blocks.length) return;
+
+  const io =
+    new IntersectionObserver(
+      entries =>
+        entries.forEach(en=>{
+
+          if(en.isIntersecting){
+
+            const id =
+              en.target.id.replace(
+                "cat-",
+                ""
+              );
+
+            pills.forEach(p =>
+              p.classList.toggle(
+                "active",
+                p.dataset.cat === id
+              )
+            );
+
+          }
+
+        }),
+      {
+        rootMargin:
+          "-40% 0px -50% 0px",
+        threshold:0
+      }
+    );
+
+  blocks.forEach(
+    b => io.observe(b)
+  );
+}
+
+/* =========================================================
+   MOBILE MENU
+   SAME MENU DATA — NO DUPLICATE PRODUCTS
+
+   Mobile does NOT have its own product list.
+
+   Example:
+   MENU item:
+   img:"noodles/pic/hakka.jpg"
+
+   Mobile automatically reads:
+   item.img
+
+   So image path is written only ONCE.
+========================================================= */
+
+const MOBILE_MENU = [
+
+  ...MENU.filter(
+    c => !c.id.startsWith("pz_")
+  ),
+
+  {
+    id:"pizza",
+
+    name:"Pizza",
+
+    img:
+      MENU.find(
+        c => c.id === "pz_signature"
+      )?.img || "",
+
+    subcats:
+
+      MENU
+        .filter(
+          c => c.id.startsWith("pz_")
+        )
+        .map(c => ({
+
+          id:c.id,
+
+          name:
+            c.name.replace(
+              /^Pizza\s*[—-]\s*/i,
+              ""
+            ),
+
+          img:c.img,
+
+          sizeNames:
+            c.sizeLabel ||
+            ["Regular","Medium","Large"],
+
+          items:c.items
+
+        }))
+
+  }
+
+];
+
+/* =========================================================
+   MOBILE HELPERS
+========================================================= */
+
+function mobileGetCategory(id){
+
+  return MOBILE_MENU.find(
+    c => c.id === id
+  );
+
+}
+
+function mobileCategoryItemCount(cat){
+
+  return cat.subcats
+
+    ? cat.subcats.reduce(
+        (n,s) =>
+          n + s.items.length,
+        0
+      )
+
+    : cat.items.length;
+}
+
+function mobileFindTarget(hash){
+
+  if(!hash) return null;
+
+  const direct =
+    mobileGetCategory(hash);
+
+  if(direct){
+
+    return {
+      cat:direct,
+      sub:null
+    };
+
+  }
+
+  const dash =
+    hash.indexOf("-");
+
+  if(dash > -1){
+
+    const parent =
+      mobileGetCategory(
+        hash.slice(0,dash)
+      );
+
+    if(parent?.subcats){
+
+      const sub =
+        parent.subcats.find(
+          s =>
+            s.id ===
+            hash.slice(dash+1)
+        );
+
+      if(sub){
+
+        return {
+          cat:parent,
+          sub:sub
+        };
+
+      }
+
+    }
+
+  }
+
+  return null;
+}
+
+function mobileMoney(n){
+
+  return "₹" +
+    Number(n).toLocaleString(
+      "en-IN"
+    );
+
+}
+
+function mobileEscapeHTML(value){
+
+  return String(value ?? "")
+    .replace(
+      /[&<>'"]/g,
+      c => ({
+        '&':'&amp;',
+        '<':'&lt;',
+        '>':'&gt;',
+        "'":'&#39;',
+        '"':'&quot;'
+      }[c])
+    );
+
+}
+
+function mobileEscapeAttr(value){
+
+  return mobileEscapeHTML(value);
+
+}
+
+/* =========================================================
+   MOBILE PRODUCT PRICE
+
+   Reads the same MENU fields:
+   p
+   s
+   s2
+========================================================= */
+
+function mobileProductPriceHTML(item){
+
+  if(item.s2){
+
+    return `
+      <div class="mobile-size-row">
+
+        ${item.s2.map(
+          (price,i)=>`
+
+            <span class="mobile-size-btn">
+              ${i===0
+                ? "Regular"
+                : "Large"}
+              · ${mobileMoney(price)}
+            </span>
+
+          `
+        ).join("")}
+
+      </div>
+    `;
+
+  }
+
+  if(item.s){
+
+    const cat =
+      MENU.find(
+        c => c.items.includes(item)
+      );
+
+    const labels =
+      cat?.sizeLabel ||
+      ["Regular","Medium","Large"];
+
+    return `
+      <div class="mobile-size-row">
+
+        ${item.s.map(
+          (price,i)=>`
+
+            <span class="mobile-size-btn">
+              ${mobileEscapeHTML(
+                labels[i] ||
+                ("Size " + (i+1))
+              )}
+              · ${mobileMoney(price)}
+            </span>
+
+          `
+        ).join("")}
+
+      </div>
+    `;
+
+  }
+
+  return `
+    <div class="mobile-price">
+
+      ${mobileMoney(item.p)}
+
+      ${
+        item.sizeLabel
+        ? `
+          <small
+            style="
+              font-family:var(--sans);
+              font-size:8px;
+              color:var(--ink-soft)
+            ">
+            · ${mobileEscapeHTML(
+              item.sizeLabel
+            )}
+          </small>
+        `
+        : ""
+      }
+
+    </div>
+  `;
+
+}
+
+/* =========================================================
+   MOBILE PRODUCT CARD
+
+   IMPORTANT:
+   item.img = SAME PATH FROM MENU
+========================================================= */
+
+function mobileProductCard(item){
+
+  return `
+
+    <article
+      class="mobile-product-card">
+
+      <div
+        class="mobile-product-image">
+
+        <img
+          src="${mobileEscapeAttr(item.img)}"
+          alt="${mobileEscapeAttr(item.n)}"
+          loading="lazy"
+
+          onerror="
+            this.style.display='none';
+            this.nextElementSibling.style.display='grid';
+          "
+        >
+
+        <div
+          class="mobile-image-placeholder"
+          style="display:none">
+
+          ${mobileEscapeHTML(item.n)}
+
+          <br>
+
+          <small>
+            Add product image
+          </small>
+
+        </div>
+
+      </div>
+
+      <div
+        class="mobile-product-content">
+
+        <h3
+          class="mobile-product-name">
+
+          ${mobileEscapeHTML(item.n)}
+
+        </h3>
+
+        ${mobileProductPriceHTML(item)}
+
+        ${
+          item.d
+          ? `
+            <p class="mobile-details">
+              ${mobileEscapeHTML(item.d)}
+            </p>
+          `
+          : ""
+        }
+
+      </div>
+
+    </article>
+
+  `;
+
+}
+
+/* =========================================================
+   MOBILE CATEGORY IMAGE
+========================================================= */
+
+function mobileCategoryImageHTML(src,name){
+
+  if(!src) return "";
+
+  return `
+    <span
+      class="mobile-category-image">
+
+      <img
+        src="${mobileEscapeAttr(src)}"
+        alt="${mobileEscapeAttr(name)}"
+        loading="lazy">
+
+    </span>
+  `;
+
+}
+
+/* =========================================================
+   MOBILE CATEGORY GRID
+========================================================= */
+
+function renderMobileCategories(){
+
+  const grid =
+    document.getElementById(
+      "mobileCategoryGrid"
+    );
+
+  if(!grid) return;
+
+  grid.innerHTML =
+    MOBILE_MENU.map(cat=>{
+
+      const count =
+        mobileCategoryItemCount(cat);
+
+      return `
+
+        <button
+          type="button"
+          class="mobile-category-card"
+          data-mobile-category="${mobileEscapeAttr(cat.id)}">
+
+          ${mobileCategoryImageHTML(
+            cat.img,
+            cat.name
+          )}
+
+          <span
+            class="mobile-category-arrow">
+            ↗
+          </span>
+
+          <h3>
+            ${mobileEscapeHTML(cat.name)}
+          </h3>
+
+          <span
+            class="mobile-item-count">
+
+            ${count}
+            ${count===1
+              ? "item"
+              : "items"}
+
+          </span>
+
+        </button>
+
+      `;
+
+    }).join("");
+
+}
+
+/* =========================================================
+   MOBILE PIZZA SUBCATEGORIES
+========================================================= */
+
+function renderMobileSubcategories(cat){
+
+  const title =
+    document.getElementById(
+      "mobileViewTitle"
+    );
+
+  const meta =
+    document.getElementById(
+      "mobileViewMeta"
+    );
+
+  const grid =
+    document.getElementById(
+      "mobileProductGrid"
+    );
+
+  if(title){
+    title.textContent =
+      cat.name;
+  }
+
+  if(meta){
+
+    meta.textContent =
+      `${cat.subcats.length}
+       ${
+         cat.subcats.length === 1
+         ? "sub-category"
+         : "sub-categories"
+       }`;
+
+  }
+
+  if(grid){
+
+    grid.innerHTML =
+      cat.subcats.map(sub=>`
+
+        <button
+          type="button"
+          class="mobile-category-card"
+          data-mobile-subcat="${mobileEscapeAttr(cat.id)}-${mobileEscapeAttr(sub.id)}">
+
+          ${mobileCategoryImageHTML(
+            sub.img,
+            sub.name
+          )}
+
+          <span
+            class="mobile-category-arrow">
+            ↗
+          </span>
+
+          <h3>
+            ${mobileEscapeHTML(sub.name)}
+          </h3>
+
+          <span
+            class="mobile-item-count">
+
+            ${sub.items.length}
+            ${
+              sub.items.length === 1
+              ? "item"
+              : "items"
+            }
+
+          </span>
+
+        </button>
+
+      `).join("");
+
+  }
+
+  const view =
+    document.getElementById(
+      "mobileMenuView"
+    );
+
+  if(view){
+    view.scrollTop = 0;
+  }
+
+}
+
+/* =========================================================
+   MOBILE PRODUCTS
+========================================================= */
+
+function renderMobileProducts(cat,sub){
+
+  const items =
+    sub
+      ? sub.items
+      : cat.items;
+
+  const title =
+    document.getElementById(
+      "mobileViewTitle"
+    );
+
+  const meta =
+    document.getElementById(
+      "mobileViewMeta"
+    );
+
+  const grid =
+    document.getElementById(
+      "mobileProductGrid"
+    );
+
+  if(title){
+
+    title.textContent =
+      sub
+        ? sub.name
+        : cat.name;
+
+  }
+
+  if(meta){
+
+    meta.textContent =
+      `${items.length}
+       ${
+         items.length === 1
+         ? "item"
+         : "items"
+       }`;
+
+  }
+
+  if(grid){
+
+    grid.innerHTML =
+      items
+        .map(mobileProductCard)
+        .join("");
+
+  }
+
+  const view =
+    document.getElementById(
+      "mobileMenuView"
+    );
+
+  if(view){
+    view.scrollTop = 0;
+  }
+
+}
+
+/* =========================================================
+   MOBILE HASH ROUTER
+========================================================= */
+
+function mobileRenderForHash(hash){
+
+  const target =
+    mobileFindTarget(hash);
+
+  if(!target){
+    return false;
+  }
+
+  if(target.sub){
+
+    renderMobileProducts(
+      target.cat,
+      target.sub
+    );
+
+  }
+  else if(target.cat.subcats){
+
+    renderMobileSubcategories(
+      target.cat
+    );
+
+  }
+  else{
+
+    renderMobileProducts(
+      target.cat,
+      null
+    );
+
+  }
+
+  return true;
+}
+
+/* =========================================================
+   OPEN MOBILE CATEGORY
+========================================================= */
+
+function openMobileView(hash){
+
+  if(!mobileRenderForHash(hash)){
+    return;
+  }
+
+  const view =
+    document.getElementById(
+      "mobileMenuView"
+    );
+
+  if(!view) return;
+
+  view.classList.add("open");
+
+  view.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+  document.body.style.overflow =
+    "hidden";
+
+  history.pushState(
+    {
+      mobileHash:hash
+    },
+    "",
+    `#${hash}`
+  );
+
+}
+
+/* =========================================================
+   CLOSE MOBILE CATEGORY
+========================================================= */
+
+function closeMobileCategory(
+  fromPop=false
+){
+
+  const view =
+    document.getElementById(
+      "mobileMenuView"
+    );
+
+  if(view){
+
+    view.classList.remove(
+      "open"
+    );
+
+    view.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+  }
+
+  document.body.style.overflow =
+    "";
+
+  if(
+    !fromPop &&
+    location.hash &&
+    mobileFindTarget(
+      location.hash.slice(1)
+    )
+  ){
+
+    history.pushState(
+      {},
+      "",
+      "#menu"
+    );
+
+  }
+
+}
+
+/* =========================================================
+   MOBILE CATEGORY CLICK
+========================================================= */
+
+const mobileCategoryGrid =
+  document.getElementById(
+    "mobileCategoryGrid"
+  );
+
+if(mobileCategoryGrid){
+
+  mobileCategoryGrid.addEventListener(
+    "click",
+    e=>{
+
+      const card =
+        e.target.closest(
+          "[data-mobile-category]"
+        );
+
+      if(card){
+
+        openMobileView(
+          card.dataset.mobileCategory
+        );
+
+      }
+
+    }
+  );
+
+}
+
+/* =========================================================
+   MOBILE SUBCATEGORY CLICK
+========================================================= */
+
+const mobileProductGrid =
+  document.getElementById(
+    "mobileProductGrid"
+  );
+
+if(mobileProductGrid){
+
+  mobileProductGrid.addEventListener(
+    "click",
+    e=>{
+
+      const card =
+        e.target.closest(
+          "[data-mobile-subcat]"
+        );
+
+      if(card){
+
+        openMobileView(
+          card.dataset.mobileSubcat
+        );
+
+      }
+
+    }
+  );
+
+}
+
+/* =========================================================
+   MOBILE BACK BUTTON
+========================================================= */
+
+const mobileBackBtn =
+  document.getElementById(
+    "mobileBackBtn"
+  );
+
+if(mobileBackBtn){
+
+  mobileBackBtn.addEventListener(
+    "click",
+    ()=>{
+
+      const hash =
+        decodeURIComponent(
+          location.hash.slice(1) || ""
+        );
+
+      const target =
+        mobileFindTarget(hash);
+
+      /* Pizza subcategory -> Pizza */
+      if(
+        target &&
+        target.sub
+      ){
+
+        history.replaceState(
+          null,
+          "",
+          "#" + target.cat.id
+        );
+
+        mobileRenderForHash(
+          target.cat.id
+        );
+
+        const view =
+          document.getElementById(
+            "mobileMenuView"
+          );
+
+        if(view){
+          view.scrollTop = 0;
+        }
+
+        return;
+      }
+
+      /* Category -> main page */
+
+      const view =
+        document.getElementById(
+          "mobileMenuView"
+        );
+
+      if(view){
+
+        view.classList.remove(
+          "open"
+        );
+
+        view.setAttribute(
+          "aria-hidden",
+          "true"
+        );
+
+      }
+
+      document.body.style.overflow =
+        "";
+
+      history.replaceState(
+        null,
+        "",
+        "#menu"
+      );
+
+    }
+  );
+
+}
+
+/* =========================================================
+   BROWSER BACK/FORWARD
+========================================================= */
+
+window.addEventListener(
+  "popstate",
+  ()=>{
+
+    const hash =
+      location.hash.slice(1);
+
+    if(
+      mobileRenderForHash(hash)
+    ){
+
+      const view =
+        document.getElementById(
+          "mobileMenuView"
+        );
+
+      if(view){
+
+        view.classList.add(
+          "open"
+        );
+
+        view.setAttribute(
+          "aria-hidden",
+          "false"
+        );
+
+      }
+
+      document.body.style.overflow =
+        "hidden";
+
+    }
+    else{
+
+      closeMobileCategory(true);
+
+    }
+
+  }
+);
+
+/* =========================================================
+   CONTACT + INIT
+========================================================= */
+
+const contactAddrLink =
+  document.getElementById(
+    "contactAddrLink"
+  );
+
+if(contactAddrLink){
+
+  contactAddrLink.href =
+    "https://www.google.com/maps/search/?api=1&query=Kamal+Takes+Chauraha,+Palia+Kalan,+Kheri,+Uttar+Pradesh";
+
+}
+
+renderRail();
+renderBlocks();
+renderReviews();
+renderCoverflow();
+setupScrollFade();
+setupRailSync();
+startAutoplay();
+
+renderMobileCategories();
+
+if(
+  mobileRenderForHash(
+    location.hash.slice(1)
+  )
+){
+
+  const view =
+    document.getElementById(
+      "mobileMenuView"
+    );
+
+  if(view){
+
+    view.classList.add(
+      "open"
+    );
+
+    view.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+  }
+
+  document.body.style.overflow =
+    "hidden";
+
+}
+
+/* =========================================================
+   PREMIUM ENHANCEMENT
+========================================================= */
+
+(function(){
+
+  "use strict";
+
+  try{
+
+    const reduced =
+      window.matchMedia &&
+      window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+    function armStagger(el){
+
+      if(!el) return;
+
+      el.classList.add(
+        "prm-stagger"
+      );
+
+      Array.from(
+        el.children
+      ).forEach(
+        (child,i)=>
+          child.style.setProperty(
+            "--prm-i",
+            i % 24
+          )
+      );
+
+      if(reduced){
+
+        el.classList.add(
+          "prm-armed"
+        );
+
+        return;
+      }
+
+      const io =
+        new IntersectionObserver(
+          entries =>
+            entries.forEach(
+              entry=>{
+
+                if(
+                  entry.isIntersecting
+                ){
+
+                  entry.target.classList.add(
+                    "prm-armed"
+                  );
+
+                  io.unobserve(
+                    entry.target
+                  );
+
+                }
+
+              }
+            ),
+          {
+            threshold:.12
+          }
+        );
+
+      io.observe(el);
+
+    }
+
+    function armAllKnownGrids(){
+
+      [
+        "mobileCategoryGrid",
+        "reviewsTrack"
+      ].forEach(id=>{
+
+        const el =
+          document.getElementById(id);
+
+        if(
+          el &&
+          el.children.length &&
+          !el.dataset.prmBound
+        ){
+
+          el.dataset.prmBound =
+            "1";
+
+          armStagger(el);
+
+        }
+
+      });
+
+    }
+
+    const productGrid2 =
+      document.getElementById(
+        "mobileProductGrid"
+      );
+
+    if(productGrid2){
+
+      const rearmProducts = ()=>{
+
+        productGrid2.classList.remove(
+          "prm-armed"
+        );
+
+        Array.from(
+          productGrid2.children
+        ).forEach(
+          (child,i)=>
+            child.style.setProperty(
+              "--prm-i",
+              i % 24
+            )
+        );
+
+        productGrid2.classList.add(
+          "prm-stagger"
+        );
+
+        requestAnimationFrame(()=>{
+
+          if(reduced){
+
+            productGrid2.classList.add(
+              "prm-armed"
+            );
+
+          }
+          else{
+
+            requestAnimationFrame(
+              () =>
+                productGrid2.classList.add(
+                  "prm-armed"
+                )
+            );
+
+          }
+
+        });
+
+      };
+
+      new MutationObserver(
+        rearmProducts
+      ).observe(
+        productGrid2,
+        {
+          childList:true
+        }
+      );
+
+    }
+
+    const bootObserver =
+      new MutationObserver(
+        armAllKnownGrids
+      );
+
+    bootObserver.observe(
+      document.body,
+      {
+        childList:true,
+        subtree:true
+      }
+    );
+
+    armAllKnownGrids();
+
+    setTimeout(
+      () => bootObserver.disconnect(),
+      4000
+    );
+
+    /* NAV SHADOW */
+
+    const nav =
+      document.querySelector(
+        ".site-nav"
+      );
+
+    if(nav){
+
+      const onScroll = () =>
+        nav.classList.toggle(
+          "prm-scrolled",
+          window.scrollY > 12
+        );
+
+      window.addEventListener(
+        "scroll",
+        onScroll,
+        {
+          passive:true
+        }
+      );
+
+      onScroll();
+
+    }
+
+    /* BURGER ANIMATION */
+
+    const burger =
+      document.getElementById(
+        "burgerBtn"
+      );
+
+    const mMenu =
+      document.getElementById(
+        "mobileMenu"
+      );
+
+    if(burger && mMenu){
+
+      const syncBurger = () =>
+        burger.classList.toggle(
+          "prm-open",
+          mMenu.classList.contains(
+            "open"
+          )
+        );
+
+      burger.addEventListener(
+        "click",
+        () =>
+          setTimeout(
+            syncBurger,
+            0
+          )
+      );
+
+      document
+        .querySelectorAll(
+          ".mobile-menu a[href^='#']"
+        )
+        .forEach(
+          a =>
+            a.addEventListener(
+              "click",
+              () =>
+                setTimeout(
+                  syncBurger,
+                  0
+                )
+            )
+        );
+
+    }
+
+    /* HERO TILT */
+
+    const heroFrame =
+      document.querySelector(
+        ".hero-art-frame"
+      );
+
+    if(
+      heroFrame &&
+      !reduced &&
+      window.matchMedia(
+        "(hover:hover) and (pointer:fine)"
+      ).matches
+    ){
+
+      let raf = null;
+
+      heroFrame.addEventListener(
+        "mousemove",
+        e=>{
+
+          const r =
+            heroFrame.getBoundingClientRect();
+
+          const px =
+            (e.clientX-r.left) /
+            r.width - .5;
+
+          const py =
+            (e.clientY-r.top) /
+            r.height - .5;
+
+          if(raf){
+            cancelAnimationFrame(
+              raf
+            );
+          }
+
+          raf =
+            requestAnimationFrame(
+              ()=>{
+
+                heroFrame.style.transform =
+                  `rotate(1.4deg)
+                   scale(1.015)
+                   rotateX(${(-py*4).toFixed(2)}deg)
+                   rotateY(${(px*4).toFixed(2)}deg)`;
+
+              }
+            );
+
+        }
+      );
+
+      heroFrame.addEventListener(
+        "mouseleave",
+        ()=>{
+
+          if(raf){
+            cancelAnimationFrame(
+              raf
+            );
+          }
+
+          heroFrame.style.transform =
+            "";
+
+        }
+      );
+
+    }
+
+  }
+  catch(err){
+
+    if(
+      window.console &&
+      console.warn
+    ){
+
+      console.warn(
+        "Premium enhancement layer skipped:",
+        err
+      );
+
+    }
+
+  }
+
+})();
+
+</script>
+</body>
+</html>
